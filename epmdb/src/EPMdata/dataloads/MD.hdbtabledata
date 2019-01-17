@@ -1,0 +1,54 @@
+{
+    "format_version": 1,
+    "imports": [
+        {
+            "target_table": "my_epmdata_hdi_project.epmdb.EPMdata.cds::MD.Addresses",
+            "source_data": {
+                "data_type": "CSV",
+                "file_name": "my_epmdata_hdi_project.epmdb.EPMdata.dataloads::addresses.csv",
+                "has_header": true
+            },
+            "import_settings": {
+                "import_columns": [
+                    "ADDRESSID",
+					"CITY",
+					"COUNTRY",
+					"REGION"
+		  ]
+            }
+        },
+        {
+            "target_table": "my_epmdata_hdi_project.epmdb.EPMdata.cds::MD.BusinessPartner",
+            "source_data": {
+                "data_type": "CSV",
+                "file_name": "my_epmdata_hdi_project.epmdb.EPMdata.dataloads::businessPartner.csv",
+                "has_header": true
+            },
+            "import_settings": {
+                "import_columns": [
+                    "PARTNERID",
+					"ADDRESSID",
+					"COMPANYNAME"
+                ]
+            }
+        },
+       
+       {
+            "target_table": "my_epmdata_hdi_project.epmdb.EPMdata.cds::MD.Products",
+            "source_data": {
+                "data_type": "CSV",
+                "file_name": "my_epmdata_hdi_project.epmdb.EPMdata.dataloads::products.csv",
+                "has_header": true
+            },
+            "import_settings": {
+                "import_columns": [
+                    "PRODUCTID",
+					"CATEGORY",
+					"NAMEID",
+					"PRICE"
+			]
+            }
+        }
+   
+    ]
+}

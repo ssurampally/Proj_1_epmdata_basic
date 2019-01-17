@@ -1,0 +1,28 @@
+namespace my_epmdata_hdi_project.epmdb.EPMdata.cds;
+context SO {
+
+    /*@@layout{"layoutInfo":{"x":143,"y":219.5}}*/
+    entity Header {
+        key SALESORDERID : String(10);
+            CREATEDAT    : LocalDate;
+            PARTNERID    : String(10);
+            CURRENCY     : String(3);
+            GROSSAMOUNT  : Decimal(10, 2);
+            NETAMOUNT    : Decimal(10, 2);
+            TAXAMOUNT    : Decimal(10, 2);
+    };
+
+    /*@@layout{"layoutInfo":{"x":-376,"y":203.5}}*/
+    entity Item {
+        key SALESORDERID   : String(10);
+        key SALESORDERITEM : String(10);
+            PRODUCTID      : String(10);
+            CURRENCY       : String(3);
+            GROSSAMOUNT    : Decimal(10, 2);
+            NETAMOUNT      : Decimal(10, 2);
+            TAXAMOUNT      : Decimal(10, 2);
+            QUANTITY       : Integer;
+            QUANTITYUNIT   : String(3);
+            DELIVERYDATE   : LocalDate;
+    };
+};   

@@ -1,0 +1,30 @@
+
+namespace my_epmdata_hdi_project.epmdb.EPMdata.cds;
+
+context MD {
+
+    /*@@layout{"layoutInfo":{"x":51,"y":169.5}}*/
+    entity Addresses {
+        key ADDRESSID : String(10);
+            CITY      : String(30);
+            COUNTRY   : String(20);
+            REGION    : String(10);
+    };
+
+    /*@@layout{"layoutInfo":{"x":-424,"y":182.5}}*/
+    entity BusinessPartner {
+        key PARTNERID   : String(10);
+            PHONENUMBER : String(15);
+            ADDRESSID   : String(10);
+            COMPANYNAME : String(100);
+    };
+
+    /*@@layout{"layoutInfo":{"x":-734,"y":208.5}}*/
+    entity Products {
+        key PRODUCTID : String(10);
+            CATEGORY  : String(30);
+            NAMEID    : String(10);
+            PRICE     : Decimal(10, 2);
+    };
+
+};

@@ -1,0 +1,48 @@
+{
+    "format_version": 1,
+    "imports": [
+        {
+            "target_table": "my_epmdata_hdi_project.epmdb.EPMdata.cds::SO.Header",
+            "source_data": {
+                "data_type": "CSV",
+                "file_name": "my_epmdata_hdi_project.epmdb.EPMdata.dataloads::salesOrder.csv",
+                "has_header": true
+            },
+            "import_settings": {
+                "import_columns": [
+                    "SALESORDERID",
+					"PARTNERID",
+					"CURRENCY",
+					"GROSSAMOUNT",
+					"NETAMOUNT",
+					"TAXAMOUNT"
+				 ]
+            }
+        },
+        
+
+
+        {
+            "target_table": "my_epmdata_hdi_project.epmdb.EPMdata.cds::SO.Item",
+            "source_data": {
+                "data_type": "CSV",
+                "file_name": "my_epmdata_hdi_project.epmdb.EPMdata.dataloads::salesOrderItem.csv",
+                "has_header": true
+            },
+            "import_settings": {
+                "import_columns": [
+                    "SALESORDERID",
+					"SALESORDERITEM",
+					"PRODUCTID",
+					"CURRENCY",
+					"GROSSAMOUNT",
+					"NETAMOUNT",
+					"TAXAMOUNT",
+					"QUANTITY",
+					"QUANTITYUNIT"
+					
+                ]
+            }
+        }
+    ]
+}
