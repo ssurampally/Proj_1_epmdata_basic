@@ -6,3 +6,5 @@
 -- hdbtabledata files are used to load the data into CDS tables sourced from csv files.
 
 -- it is a very small subset of epm model from HANA SHINE content.
+
+-- Just adjused the naming convention
