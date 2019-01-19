@@ -2,10 +2,10 @@
     "format_version": 1,
     "imports": [
         {
-            "target_table": "1_my_epmdata_hdi_project.epmdb.EPMdata.cds::MD.Addresses",
+            "target_table": "MD.Addresses",
             "source_data": {
                 "data_type": "CSV",
-                "file_name": "1_my_epmdata_hdi_project.epmdb.EPMdata.dataloads::addresses.csv",
+                "file_name": "addresses.csv",
                 "has_header": true
             },
             "import_settings": {
@@ -18,10 +18,10 @@
             }
         },
         {
-            "target_table": "1_my_epmdata_hdi_project.epmdb.EPMdata.cds::MD.BusinessPartner",
+            "target_table": "MD.BusinessPartner",
             "source_data": {
                 "data_type": "CSV",
-                "file_name": "1_my_epmdata_hdi_project.epmdb.EPMdata.dataloads::businessPartner.csv",
+                "file_name": "businessPartner.csv",
                 "has_header": true
             },
             "import_settings": {
@@ -34,10 +34,10 @@
         },
        
        {
-            "target_table": "1_my_epmdata_hdi_project.epmdb.EPMdata.cds::MD.Products",
+            "target_table": "MD.Products",
             "source_data": {
                 "data_type": "CSV",
-                "file_name": "1_my_epmdata_hdi_project.epmdb.EPMdata.dataloads::products.csv",
+                "file_name": "products.csv",
                 "has_header": true
             },
             "import_settings": {

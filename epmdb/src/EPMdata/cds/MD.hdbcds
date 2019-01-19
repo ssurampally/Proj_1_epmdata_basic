@@ -1,6 +1,4 @@
 
-namespace 1_my_epmdata_hdi_project.epmdb.EPMdata.cds;
-
 context MD {
 
     /*@@layout{"layoutInfo":{"x":51,"y":169.5}}*/
