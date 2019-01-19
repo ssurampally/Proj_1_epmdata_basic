@@ -1,4 +1,4 @@
-namespace my_epmdata_hdi_project.epmdb.EPMdata.cds;
+namespace 1_my_epmdata_hdi_project.epmdb.EPMdata.cds;
 context SO {
 
     /*@@layout{"layoutInfo":{"x":143,"y":219.5}}*/

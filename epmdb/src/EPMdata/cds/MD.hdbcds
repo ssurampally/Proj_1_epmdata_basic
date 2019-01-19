@@ -1,5 +1,5 @@
 
-namespace my_epmdata_hdi_project.epmdb.EPMdata.cds;
+namespace 1_my_epmdata_hdi_project.epmdb.EPMdata.cds;
 
 context MD {
 
