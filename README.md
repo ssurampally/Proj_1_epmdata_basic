@@ -8,3 +8,7 @@
 -- it is a very small subset of epm model from HANA SHINE content.
 
 -- Just adjused the naming convention
+
+-- It has the artificats for SQL DDL also, which are created as design time objects, then loaded with simple inserts.
+
+
