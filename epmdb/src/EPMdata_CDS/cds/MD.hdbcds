@@ -1,3 +1,5 @@
+using "Addresses" as Addresses;
+using "BusinessPartner" as BusinessPartner;
 
 context MD {
 
@@ -24,5 +26,20 @@ context MD {
             NAMEID    : String(10);
             PRICE     : Decimal(10, 2);
     };
-
 };
+
+/*@@layout{"layoutInfo":{"x":-337,"y":-117.5,"inner":{"unconnected":[{"type":"SimpleDS","id":".Customer_master.BusinessPartner","x":-222,"y":-57},{"type":"SimpleDS","id":".Customer_master.Addresses","x":105,"y":-57}]}}}*/
+view Customer_Master_cds as
+    select from (
+                   BusinessPartner
+        inner join Addresses       on
+            BusinessPartner.ADDRESSID = Addresses.ADDRESSID
+    )
+    {
+        BusinessPartner.PARTNERID,
+        BusinessPartner.PHONENUMBER,
+        BusinessPartner.COMPANYNAME,
+        Addresses.CITY,
+        Addresses.COUNTRY,
+        Addresses.REGION
+    };
