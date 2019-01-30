@@ -11,9 +11,6 @@ modules:
 
 resources:
  - name: hdi_epmdb
-   parameters:
-      config:
-         schema: epm_basic
    properties:
       hdi-container-name: ${service-name}
    type: com.sap.xs.hdi-container

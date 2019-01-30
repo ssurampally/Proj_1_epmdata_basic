@@ -2,7 +2,7 @@
     "format_version": 1,
     "imports": [
         {
-            "target_table": "Address",
+            "target_table": "MD.Addresses",
             "source_data": {
                 "data_type": "CSV",
                 "file_name": "addresses.csv",
@@ -18,7 +18,7 @@
             }
         },
         {
-            "target_table": "businesspartner",
+            "target_table": "MD.BusinessPartner",
             "source_data": {
                 "data_type": "CSV",
                 "file_name": "businessPartner.csv",
@@ -34,7 +34,7 @@
         },
        
        {
-            "target_table": "Products",
+            "target_table": "MD.Products",
             "source_data": {
                 "data_type": "CSV",
                 "file_name": "products.csv",
