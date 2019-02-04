@@ -1,16 +1,16 @@
 ID: myepm
 _schema-version: '2.0'
 version: 0.0.1
-
 modules:
- - name: epmdb
-   type: hdb
-   path: epmdb
-   requires:
-    - name: hdi_epmdb
-
+  - name: epmdb
+    type: hdb
+    path: epmdb
+    requires:
+      - name: hdi_epmdb
+        properties:
+          TARGET_CONTAINER: '~{hdi-container-name}'
 resources:
- - name: hdi_epmdb
-   properties:
-      hdi-container-name: ${service-name}
-   type: com.sap.xs.hdi-container
+  - name: hdi_epmdb
+    properties:
+      hdi-container-name: '${service-name}'
+    type: com.sap.xs.hdi-container

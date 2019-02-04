@@ -1,0 +1,8 @@
+TRIGGER "add_insert_to_log"
+    AFTER INSERT ON 
+    "MD.BusinessPartner" 
+  BEGIN
+
+  INSERT INTO "MD.Addresses" 
+           VALUES('Test', 'Test', 'Test', 'Test');
+ END;

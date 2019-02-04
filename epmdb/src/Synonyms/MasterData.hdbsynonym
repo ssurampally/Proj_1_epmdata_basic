@@ -1,0 +1,9 @@
+{
+  "BusinessPartner1": {
+    "target": {
+      "object": "MD.BusinessPartner",
+      "schema": "PROJ_1_EPMDATA_BASIC_HDI_EPMDB_1",
+      "database": "POC"
+    }
+  }
+}
