@@ -1,0 +1,10 @@
+{
+	"crossContainer_ext_proj": {
+		"object_owner" : {
+			"container_roles": ["reader#"]
+		},
+		"application_user" : {
+			"container_roles": ["reader"]
+		}
+	}
+}

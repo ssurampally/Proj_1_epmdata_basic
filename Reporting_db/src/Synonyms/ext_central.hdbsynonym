@@ -1,0 +1,9 @@
+{
+  "Counrties": {
+    "target": {
+      "object": "COUNTRIES",
+      "schema": "CENTRAL_MDM_1",
+      "database": "POC"
+    }
+  }
+}

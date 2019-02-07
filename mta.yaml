@@ -8,27 +8,50 @@ modules:
     requires:
       - name: hdi_epmdb
         properties:
-          TARGET_CONTAINER: '~{hdi-container-name}'
-
+          TARGET_CONTAINER: '~{hdi-container-epmdb}'
       - name: cross-container-service-1
         group: SERVICE_REPLACEMENTS
-
         properties:
           key: ServiceName_1
-          service: ~{the-service-name}
-                            
-
-
+          service: '~{the-service-name}'
+  - name: Reporting_db
+    type: hdb
+    path: Reporting_db
+    requires:
+      - name: hdi_Reporting_db
+        properties:
+          TARGET_CONTAINER: '~{hdi-container-reporting}'
+      - name: hdi_epmdb
+        properties:
+          key: hdi-crossContainer-service
+          service: '~{hdi-container-epmdb}'
+        group: SERVICE_REPLACEMENTS
+      - name: cross-container-service-2
+        group: SERVICE_REPLACEMENTS
+        properties:
+          key: crossContainer_ext_proj
+          service: '~{the-service-name}'
 resources:
   - name: hdi_epmdb
     properties:
-      hdi-container-name: '${service-name}'
+      hdi-container-epmdb: '${service-name}'
     type: com.sap.xs.hdi-container
-
   - name: cross-container-service-1
     parameters:
-       service-name: Cross_schema_s4hana
+      service-name: Cross_schema_s4hana
     properties:
-       the-service-name: ${service-name}
+      the-service-name: '${service-name}'
     type: org.cloudfoundry.existing-service
-
+  - name: hdi_Reporting_db
+    parameters:
+      config:
+        schema: Reporting
+    properties:
+      hdi-container-reporting: '${service-name}'
+    type: com.sap.xs.hdi-container
+  - name: cross-container-service-2
+    parameters:
+      service-name: SSURAMPALLY-lc21i8umofpdkp2z-Proj_2_cross_container-hdi_Central_MDM
+    properties:
+      the-service-name: '${service-name}'
+    type: org.cloudfoundry.existing-service

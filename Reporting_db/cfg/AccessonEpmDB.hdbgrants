@@ -1,0 +1,10 @@
+{
+	"hdi-crossContainer-service": {
+		"object_owner" : {
+			"container_roles": ["reader#"]
+		},
+		"application_user" : {
+			"container_roles": ["reader"]
+		}
+	}
+}

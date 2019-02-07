@@ -1,0 +1,9 @@
+{
+  "SOHeader": {
+    "target": {
+      "object": "SO.Header",
+      "schema": "PROJ_1_EPMDATA_BASIC_HDI_EPMDB_1",
+      "database": "POC"
+    }
+  }
+}
