@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="modelling.Core::Products_master" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<descriptions defaultDescription="Products_master"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="MD.Products">
+    <resourceUri>MD.Products</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+    <viewAttributes>
+      <viewAttribute id="PRODUCTID">
+        <descriptions defaultDescription="PRODUCTID"/>
+      </viewAttribute>
+      <viewAttribute id="CATEGORY">
+        <descriptions defaultDescription="CATEGORY"/>
+      </viewAttribute>
+      <viewAttribute id="NAMEID">
+        <descriptions defaultDescription="NAMEID"/>
+      </viewAttribute>
+      <viewAttribute id="PRICE">
+        <descriptions defaultDescription="PRICE"/>
+      </viewAttribute>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <restrictedViewAttributes/>
+    <input node="MD.Products">
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCTID" source="PRODUCTID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CATEGORY" source="CATEGORY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAMEID" source="NAMEID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRICE" source="PRICE"/>
+    </input>
+  </calculationView>
+</calculationViews>
+<logicalModel id="Projection_1">
+  <attributes>
+    <attribute id="PRODUCTID" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PRODUCTID"/>
+      <keyMapping columnObjectName="Projection_1" columnName="PRODUCTID"/>
+    </attribute>
+    <attribute id="CATEGORY" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CATEGORY"/>
+      <keyMapping columnObjectName="Projection_1" columnName="CATEGORY"/>
+    </attribute>
+    <attribute id="NAMEID" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="NAMEID"/>
+      <keyMapping columnObjectName="Projection_1" columnName="NAMEID"/>
+    </attribute>
+    <attribute id="PRICE" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PRICE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="PRICE"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="89" y="267"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

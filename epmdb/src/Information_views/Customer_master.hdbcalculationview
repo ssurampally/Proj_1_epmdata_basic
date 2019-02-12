@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="Customer_master" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="modelling.Core::Customer_master" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
 <descriptions defaultDescription="Customer_master"/>
 <localVariables/>
 <variableMappings/>
@@ -114,7 +114,7 @@
       <keyMapping columnObjectName="Join_1" columnName="COMPANYNAME"/>
     </attribute>
     <attribute id="CITY" order="4" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CITY"/>
+      <descriptions defaultDescription="City"/>
       <keyMapping columnObjectName="Join_1" columnName="CITY"/>
     </attribute>
     <attribute id="COUNTRY" order="5" displayAttribute="false" attributeHierarchyActive="false">
@@ -134,21 +134,21 @@
 <layout>
   <shapes>
     <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
-      <upperLeftCorner x="221.11302679000914" y="112"/>
+      <upperLeftCorner x="221" y="112"/>
     
       <rectangleSize width="160"/>
     </shape>
   
     <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="92" y="356.9999988079071"/>
+      <upperLeftCorner x="92" y="356"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape expanded="true" modelObjectName="Projection_2" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="302.00000000000006" y="356.9999988079071"/>
+      <upperLeftCorner x="302" y="356"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape expanded="true" modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="221.11302679000914" y="217"/>
+      <upperLeftCorner x="221" y="217"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape modelObjectName="Projection_1" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">

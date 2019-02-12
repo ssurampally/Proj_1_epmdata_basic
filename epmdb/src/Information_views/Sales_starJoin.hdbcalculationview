@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="modelling.Core::Sales_starJoin" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<descriptions defaultDescription="Sales_starJoin"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="modelling.Core::Sales">
+    <resourceUri>modelling.Core::Sales</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+    <viewAttributes>
+      <viewAttribute id="SALESORDERID">
+        <descriptions defaultDescription="SALESORDERID"/>
+      </viewAttribute>
+      <viewAttribute id="PARTNERID">
+        <descriptions defaultDescription="PARTNERID"/>
+      </viewAttribute>
+      <viewAttribute id="CREATEDAT">
+        <descriptions defaultDescription="CREATEDAT"/>
+      </viewAttribute>
+      <viewAttribute id="SALESORDERITEM">
+        <descriptions defaultDescription="SALESORDERITEM"/>
+      </viewAttribute>
+      <viewAttribute id="PRODUCTID">
+        <descriptions defaultDescription="PRODUCTID"/>
+      </viewAttribute>
+      <viewAttribute id="GROSSAMOUNT">
+        <descriptions defaultDescription="GROSSAMOUNT"/>
+      </viewAttribute>
+      <viewAttribute id="QUANTITY">
+        <descriptions defaultDescription="QUANTITY"/>
+      </viewAttribute>
+      <viewAttribute id="CURRENCY">
+        <descriptions defaultDescription="CURRENCY"/>
+      </viewAttribute>
+      <viewAttribute id="DELIVERYDATE">
+        <descriptions defaultDescription="DELIVERYDATE"/>
+      </viewAttribute>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <restrictedViewAttributes/>
+    <input node="modelling.Core::Sales">
+      <mapping xsi:type="Calculation:AttributeMapping" target="SALESORDERID" source="SALESORDERID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PARTNERID" source="PARTNERID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CREATEDAT" source="CREATEDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SALESORDERITEM" source="SALESORDERITEM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCTID" source="PRODUCTID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GROSSAMOUNT" source="GROSSAMOUNT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="QUANTITY" source="QUANTITY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CURRENCY" source="CURRENCY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DELIVERYDATE" source="DELIVERYDATE"/>
+    </input>
+  </calculationView>
+</calculationViews>
+<logicalModel id="Projection_1">
+  <attributes>
+    <attribute id="SALESORDERID" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SALESORDERID"/>
+      <keyMapping columnObjectName="Projection_1" columnName="SALESORDERID"/>
+    </attribute>
+    <attribute id="SALESORDERITEM" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SALESORDERITEM"/>
+      <keyMapping columnObjectName="Projection_1" columnName="SALESORDERITEM"/>
+    </attribute>
+    <attribute id="CURRENCY" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CURRENCY"/>
+      <keyMapping columnObjectName="Projection_1" columnName="CURRENCY"/>
+    </attribute>
+    <attribute id="DELIVERYDATE" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DELIVERYDATE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="DELIVERYDATE"/>
+    </attribute>
+    <attribute id="PARTNERID$local">
+      <descriptions defaultDescription="PARTNERID"/>
+      <keyMapping columnObjectName="Projection_1" columnName="PARTNERID"/>
+    </attribute>
+    <attribute id="PRODUCTID$local">
+      <descriptions defaultDescription="PRODUCTID"/>
+      <keyMapping columnObjectName="Projection_1" columnName="PRODUCTID"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures>
+    <measure id="GROSSAMOUNT" order="3" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="GROSSAMOUNT"/>
+      <measureMapping columnObjectName="Projection_1" columnName="GROSSAMOUNT"/>
+    </measure>
+    <measure id="QUANTITY" order="4" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="QUANTITY"/>
+      <measureMapping columnObjectName="Projection_1" columnName="QUANTITY"/>
+    </measure>
+  </baseMeasures>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+  <localDimensions/>
+  <sharedDimensions>
+    <logicalJoin associatedObjectUri="modelling.Core::Customer_master">
+      <attributes>
+        <attributeRef>PARTNERID$local</attributeRef>
+      </attributes>
+      <associatedAttributeNames>
+        <attributeName>PARTNERID</attributeName>
+      </associatedAttributeNames>
+      <properties cardinality="CN_1" joinType="leftOuter" joinOperator="Equal"/>
+      <associatedAttributeFeatures/>
+    </logicalJoin>
+    <logicalJoin associatedObjectUri="modelling.Core::Products_master">
+      <attributes>
+        <attributeRef>PRODUCTID$local</attributeRef>
+      </attributes>
+      <associatedAttributeNames>
+        <attributeName>PRODUCTID</attributeName>
+      </associatedAttributeNames>
+      <properties cardinality="CN_1" joinType="leftOuter" joinOperator="Equal"/>
+      <associatedAttributeFeatures/>
+    </logicalJoin>
+  </sharedDimensions>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="115" y="230"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Projection_1" modelObjectNameSpace="StarJoinViewNodeInput" modelObjectType="repository">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="modelling.Core::Customer_master" modelObjectNameSpace="StarJoinViewNodeSharedCV" modelObjectType="repository">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="modelling.Core::Products_master" modelObjectNameSpace="StarJoinViewNodeSharedCV" modelObjectType="repository">
+      <upperLeftCorner x="-93" y="197"/>
+      <rectangleSize width="250"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

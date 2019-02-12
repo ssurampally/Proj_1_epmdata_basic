@@ -11,8 +11,9 @@
             "import_settings": {
                 "import_columns": [
                     "SALESORDERID",
-					"PARTNERID",
-					"CURRENCY",
+                    "CREATEDAT",
+                    "PARTNERID",
+                    "CURRENCY",
 					"GROSSAMOUNT",
 					"NETAMOUNT",
 					"TAXAMOUNT"
@@ -39,7 +40,8 @@
 					"NETAMOUNT",
 					"TAXAMOUNT",
 					"QUANTITY",
-					"QUANTITYUNIT"
+					"QUANTITYUNIT",
+					"DELIVERYDATE"
 					
                 ]
             }

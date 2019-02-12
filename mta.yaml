@@ -43,9 +43,6 @@ resources:
       the-service-name: '${service-name}'
     type: org.cloudfoundry.existing-service
   - name: hdi_Reporting_db
-    parameters:
-      config:
-        schema: Reporting
     properties:
       hdi-container-reporting: '${service-name}'
     type: com.sap.xs.hdi-container
