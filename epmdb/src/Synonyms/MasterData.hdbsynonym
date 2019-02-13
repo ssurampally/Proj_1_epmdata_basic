@@ -5,5 +5,11 @@
       "schema": "PROJ_1_EPMDATA_BASIC_HDI_EPMDB_1",
       "database": "POC"
     }
+  },
+  "ZM_TIME_DIMENSION": {
+    "target": {
+      "object": "M_TIME_DIMENSION",
+      "schema": "_SYS_BI"
+    }
   }
 }
