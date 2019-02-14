@@ -26,6 +26,7 @@ context MD {
             NAMEID    : String(10);
             PRICE     : Decimal(10, 2);
     };
+    
 };
 
 /*@@layout{"layoutInfo":{"x":-337,"y":-117.5,"inner":{"unconnected":[{"type":"SimpleDS","id":".Customer_master.BusinessPartner","x":-222,"y":-57},{"type":"SimpleDS","id":".Customer_master.Addresses","x":105,"y":-57}]}}}*/

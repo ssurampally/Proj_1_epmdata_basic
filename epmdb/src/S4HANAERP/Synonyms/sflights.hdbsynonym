@@ -16,5 +16,17 @@
       "object": "SPFLI",
       "schema": "SFLIGHT"
     }
+  },
+  "SMEAL": {
+    "target": {
+      "object": "SMEAL",
+      "schema": "SFLIGHT"
+    }
+  },
+  "SMEALT": {
+    "target": {
+      "object": "SMEALT",
+      "schema": "SFLIGHT"
+    }
   }
 }
