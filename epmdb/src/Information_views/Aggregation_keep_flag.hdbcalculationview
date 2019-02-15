@@ -1,176 +1,176 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="modelling.Core::Aggregation_keep_flag" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
-<descriptions defaultDescription="Aggregation_keep_flag"/>
-<localVariables/>
-<variableMappings/>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="3.0" dataCategory="CUBE" cacheInvalidationPeriod="NONE" id="Modelling::Aggregation_keep_flag" applyPrivilegeType="NONE" outputViewType="Aggregation" enforceSqlExecution="false">
+<descriptions defaultDescription="Aggregation_keep_flag"></descriptions>
+<localVariables></localVariables>
+<variableMappings></variableMappings>
 <dataSources>
-  <DataSource id="modelling.Core::Sales">
-    <resourceUri>modelling.Core::Sales</resourceUri>
+  <DataSource id="Modelling::Sales">
+    <resourceUri>Modelling::Sales</resourceUri>
   </DataSource>
 </dataSources>
 <calculationViews>
   <calculationView xsi:type="Calculation:AggregationView" id="Aggregation_1">
     <viewAttributes>
       <viewAttribute id="SALESORDERID">
-        <descriptions defaultDescription="SALESORDERID"/>
+        <descriptions defaultDescription="SALESORDERID"></descriptions>
       </viewAttribute>
       <viewAttribute id="PARTNERID">
-        <descriptions defaultDescription="PARTNERID"/>
+        <descriptions defaultDescription="PARTNERID"></descriptions>
       </viewAttribute>
       <viewAttribute id="CREATEDAT">
-        <descriptions defaultDescription="CREATEDAT"/>
+        <descriptions defaultDescription="CREATEDAT"></descriptions>
       </viewAttribute>
       <viewAttribute id="SALESORDERITEM">
-        <descriptions defaultDescription="SALESORDERITEM"/>
+        <descriptions defaultDescription="SALESORDERITEM"></descriptions>
       </viewAttribute>
       <viewAttribute id="PRODUCTID">
-        <descriptions defaultDescription="PRODUCTID"/>
+        <descriptions defaultDescription="PRODUCTID"></descriptions>
       </viewAttribute>
-      <viewAttribute id="GROSSAMOUNT" aggregationType="sum">
-        <descriptions defaultDescription="GROSSAMOUNT"/>
+      <viewAttribute aggregationType="sum" id="GROSSAMOUNT">
+        <descriptions defaultDescription="GROSSAMOUNT"></descriptions>
       </viewAttribute>
-      <viewAttribute id="QUANTITY" aggregationType="sum">
-        <descriptions defaultDescription="QUANTITY"/>
+      <viewAttribute aggregationType="sum" id="QUANTITY">
+        <descriptions defaultDescription="QUANTITY"></descriptions>
       </viewAttribute>
       <viewAttribute id="CURRENCY">
-        <descriptions defaultDescription="CURRENCY"/>
+        <descriptions defaultDescription="CURRENCY"></descriptions>
       </viewAttribute>
       <viewAttribute id="DELIVERYDATE">
-        <descriptions defaultDescription="DELIVERYDATE"/>
+        <descriptions defaultDescription="DELIVERYDATE"></descriptions>
       </viewAttribute>
       <viewAttribute id="Year">
-        <descriptions defaultDescription="Year"/>
+        <descriptions defaultDescription="Year"></descriptions>
       </viewAttribute>
     </viewAttributes>
-    <calculatedViewAttributes/>
-    <restrictedViewAttributes/>
+    <calculatedViewAttributes></calculatedViewAttributes>
+    <restrictedViewAttributes></restrictedViewAttributes>
     <input node="Projection_1">
-      <mapping xsi:type="Calculation:AttributeMapping" target="SALESORDERID" source="SALESORDERID"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="PARTNERID" source="PARTNERID"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="CREATEDAT" source="CREATEDAT"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="SALESORDERITEM" source="SALESORDERITEM"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCTID" source="PRODUCTID"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="GROSSAMOUNT" source="GROSSAMOUNT"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="QUANTITY" source="QUANTITY"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="CURRENCY" source="CURRENCY"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="DELIVERYDATE" source="DELIVERYDATE"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="Year" source="Year"/>
+      <mapping xsi:type="Calculation:AttributeMapping" source="SALESORDERID" target="SALESORDERID"></mapping>
+      <mapping xsi:type="Calculation:AttributeMapping" source="PARTNERID" target="PARTNERID"></mapping>
+      <mapping xsi:type="Calculation:AttributeMapping" source="CREATEDAT" target="CREATEDAT"></mapping>
+      <mapping xsi:type="Calculation:AttributeMapping" source="SALESORDERITEM" target="SALESORDERITEM"></mapping>
+      <mapping xsi:type="Calculation:AttributeMapping" source="PRODUCTID" target="PRODUCTID"></mapping>
+      <mapping xsi:type="Calculation:AttributeMapping" source="GROSSAMOUNT" target="GROSSAMOUNT"></mapping>
+      <mapping xsi:type="Calculation:AttributeMapping" source="QUANTITY" target="QUANTITY"></mapping>
+      <mapping xsi:type="Calculation:AttributeMapping" source="CURRENCY" target="CURRENCY"></mapping>
+      <mapping xsi:type="Calculation:AttributeMapping" source="DELIVERYDATE" target="DELIVERYDATE"></mapping>
+      <mapping xsi:type="Calculation:AttributeMapping" source="Year" target="Year"></mapping>
     </input>
   </calculationView>
   <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
     <viewAttributes>
       <viewAttribute id="SALESORDERID">
-        <descriptions defaultDescription="SALESORDERID"/>
+        <descriptions defaultDescription="SALESORDERID"></descriptions>
       </viewAttribute>
       <viewAttribute id="PARTNERID">
-        <descriptions defaultDescription="PARTNERID"/>
+        <descriptions defaultDescription="PARTNERID"></descriptions>
       </viewAttribute>
       <viewAttribute id="CREATEDAT">
-        <descriptions defaultDescription="CREATEDAT"/>
+        <descriptions defaultDescription="CREATEDAT"></descriptions>
       </viewAttribute>
       <viewAttribute id="SALESORDERITEM">
-        <descriptions defaultDescription="SALESORDERITEM"/>
+        <descriptions defaultDescription="SALESORDERITEM"></descriptions>
       </viewAttribute>
       <viewAttribute id="PRODUCTID">
-        <descriptions defaultDescription="PRODUCTID"/>
+        <descriptions defaultDescription="PRODUCTID"></descriptions>
       </viewAttribute>
       <viewAttribute id="GROSSAMOUNT">
-        <descriptions defaultDescription="GROSSAMOUNT"/>
+        <descriptions defaultDescription="GROSSAMOUNT"></descriptions>
       </viewAttribute>
       <viewAttribute id="QUANTITY">
-        <descriptions defaultDescription="QUANTITY"/>
+        <descriptions defaultDescription="QUANTITY"></descriptions>
       </viewAttribute>
       <viewAttribute id="CURRENCY">
-        <descriptions defaultDescription="CURRENCY"/>
+        <descriptions defaultDescription="CURRENCY"></descriptions>
       </viewAttribute>
       <viewAttribute id="DELIVERYDATE">
-        <descriptions defaultDescription="DELIVERYDATE"/>
+        <descriptions defaultDescription="DELIVERYDATE"></descriptions>
       </viewAttribute>
     </viewAttributes>
     <calculatedViewAttributes>
-      <calculatedViewAttribute id="Year" datatype="NVARCHAR" length="4" expressionLanguage="SQL">
-        <formula>Year(&quot;CREATEDAT&quot;)</formula>
+      <calculatedViewAttribute datatype="NVARCHAR" length="4" expressionLanguage="SQL" id="Year">
+        <formula>Year("CREATEDAT")</formula>
       </calculatedViewAttribute>
     </calculatedViewAttributes>
-    <restrictedViewAttributes/>
-    <input node="modelling.Core::Sales">
-      <mapping xsi:type="Calculation:AttributeMapping" target="SALESORDERID" source="SALESORDERID"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="PARTNERID" source="PARTNERID"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="CREATEDAT" source="CREATEDAT"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="SALESORDERITEM" source="SALESORDERITEM"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCTID" source="PRODUCTID"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="GROSSAMOUNT" source="GROSSAMOUNT"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="QUANTITY" source="QUANTITY"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="CURRENCY" source="CURRENCY"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="DELIVERYDATE" source="DELIVERYDATE"/>
+    <restrictedViewAttributes></restrictedViewAttributes>
+    <input node="Modelling::Sales">
+      <mapping xsi:type="Calculation:AttributeMapping" source="SALESORDERID" target="SALESORDERID"></mapping>
+      <mapping xsi:type="Calculation:AttributeMapping" source="PARTNERID" target="PARTNERID"></mapping>
+      <mapping xsi:type="Calculation:AttributeMapping" source="CREATEDAT" target="CREATEDAT"></mapping>
+      <mapping xsi:type="Calculation:AttributeMapping" source="SALESORDERITEM" target="SALESORDERITEM"></mapping>
+      <mapping xsi:type="Calculation:AttributeMapping" source="PRODUCTID" target="PRODUCTID"></mapping>
+      <mapping xsi:type="Calculation:AttributeMapping" source="GROSSAMOUNT" target="GROSSAMOUNT"></mapping>
+      <mapping xsi:type="Calculation:AttributeMapping" source="QUANTITY" target="QUANTITY"></mapping>
+      <mapping xsi:type="Calculation:AttributeMapping" source="CURRENCY" target="CURRENCY"></mapping>
+      <mapping xsi:type="Calculation:AttributeMapping" source="DELIVERYDATE" target="DELIVERYDATE"></mapping>
     </input>
   </calculationView>
 </calculationViews>
 <logicalModel id="Aggregation_1">
   <attributes>
-    <attribute id="SALESORDERID" order="1" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="SALESORDERID"/>
-      <keyMapping columnObjectName="Aggregation_1" columnName="SALESORDERID"/>
+    <attribute id="SALESORDERID" displayAttribute="false" order="1" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SALESORDERID"></descriptions>
+      <keyMapping columnObjectName="Aggregation_1" columnName="SALESORDERID"></keyMapping>
     </attribute>
-    <attribute id="PARTNERID" order="2" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="PARTNERID"/>
-      <keyMapping columnObjectName="Aggregation_1" columnName="PARTNERID"/>
+    <attribute id="PARTNERID" displayAttribute="false" order="2" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PARTNERID"></descriptions>
+      <keyMapping columnObjectName="Aggregation_1" columnName="PARTNERID"></keyMapping>
     </attribute>
-    <attribute id="CREATEDAT" order="3" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CREATEDAT"/>
-      <keyMapping columnObjectName="Aggregation_1" columnName="CREATEDAT"/>
+    <attribute id="CREATEDAT" displayAttribute="false" order="3" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CREATEDAT"></descriptions>
+      <keyMapping columnObjectName="Aggregation_1" columnName="CREATEDAT"></keyMapping>
     </attribute>
-    <attribute id="SALESORDERITEM" order="4" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="SALESORDERITEM"/>
-      <keyMapping columnObjectName="Aggregation_1" columnName="SALESORDERITEM"/>
+    <attribute id="SALESORDERITEM" displayAttribute="false" order="4" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SALESORDERITEM"></descriptions>
+      <keyMapping columnObjectName="Aggregation_1" columnName="SALESORDERITEM"></keyMapping>
     </attribute>
-    <attribute id="PRODUCTID" order="5" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="PRODUCTID"/>
-      <keyMapping columnObjectName="Aggregation_1" columnName="PRODUCTID"/>
+    <attribute id="PRODUCTID" displayAttribute="false" order="5" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PRODUCTID"></descriptions>
+      <keyMapping columnObjectName="Aggregation_1" columnName="PRODUCTID"></keyMapping>
     </attribute>
-    <attribute id="CURRENCY" order="8" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CURRENCY"/>
-      <keyMapping columnObjectName="Aggregation_1" columnName="CURRENCY"/>
+    <attribute id="CURRENCY" displayAttribute="false" order="8" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CURRENCY"></descriptions>
+      <keyMapping columnObjectName="Aggregation_1" columnName="CURRENCY"></keyMapping>
     </attribute>
-    <attribute id="DELIVERYDATE" order="9" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="DELIVERYDATE"/>
-      <keyMapping columnObjectName="Aggregation_1" columnName="DELIVERYDATE"/>
+    <attribute id="DELIVERYDATE" displayAttribute="false" order="9" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DELIVERYDATE"></descriptions>
+      <keyMapping columnObjectName="Aggregation_1" columnName="DELIVERYDATE"></keyMapping>
     </attribute>
-    <attribute id="Year" order="10" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Year"/>
-      <keyMapping columnObjectName="Aggregation_1" columnName="Year"/>
+    <attribute id="Year" displayAttribute="false" order="10" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Year"></descriptions>
+      <keyMapping columnObjectName="Aggregation_1" columnName="Year"></keyMapping>
     </attribute>
   </attributes>
-  <calculatedAttributes/>
+  <calculatedAttributes></calculatedAttributes>
   <baseMeasures>
-    <measure id="GROSSAMOUNT" order="6" aggregationType="sum" measureType="simple">
-      <descriptions defaultDescription="GROSSAMOUNT"/>
-      <measureMapping columnObjectName="Aggregation_1" columnName="GROSSAMOUNT"/>
+    <measure aggregationType="sum" id="GROSSAMOUNT" order="6" measureType="simple">
+      <descriptions defaultDescription="GROSSAMOUNT"></descriptions>
+      <measureMapping columnObjectName="Aggregation_1" columnName="GROSSAMOUNT"></measureMapping>
     </measure>
-    <measure id="QUANTITY" order="7" aggregationType="sum" measureType="simple">
-      <descriptions defaultDescription="QUANTITY"/>
-      <measureMapping columnObjectName="Aggregation_1" columnName="QUANTITY"/>
+    <measure aggregationType="sum" id="QUANTITY" order="7" measureType="simple">
+      <descriptions defaultDescription="QUANTITY"></descriptions>
+      <measureMapping columnObjectName="Aggregation_1" columnName="QUANTITY"></measureMapping>
     </measure>
   </baseMeasures>
-  <calculatedMeasures/>
-  <restrictedMeasures/>
-  <localDimensions/>
+  <calculatedMeasures></calculatedMeasures>
+  <restrictedMeasures></restrictedMeasures>
+  <localDimensions></localDimensions>
 </logicalModel>
 <layout>
   <shapes>
-    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
-      <upperLeftCorner x="92" y="112"/>
+    <shape expanded="true" modelObjectNameSpace="MeasureGroup" modelObjectName="Output">
+      <upperLeftCorner x="92" y="112"></upperLeftCorner>
     
-      <rectangleSize width="160"/>
+      <rectangleSize width="160"></rectangleSize>
     </shape>
   
-    <shape expanded="true" modelObjectName="Aggregation_1" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="92" y="217"/>
-      <rectangleSize height="30" width="160"/>
+    <shape expanded="true" modelObjectNameSpace="CalculationView" modelObjectName="Aggregation_1">
+      <upperLeftCorner x="92" y="217"></upperLeftCorner>
+      <rectangleSize width="160" height="30"></rectangleSize>
     </shape>
-    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="92" y="322"/>
-      <rectangleSize height="30" width="160"/>
+    <shape expanded="true" modelObjectNameSpace="CalculationView" modelObjectName="Projection_1">
+      <upperLeftCorner x="92" y="322"></upperLeftCorner>
+      <rectangleSize width="160" height="30"></rectangleSize>
     </shape>
   </shapes>
 </layout>

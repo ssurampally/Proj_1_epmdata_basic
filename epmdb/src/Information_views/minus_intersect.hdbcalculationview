@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="Modelling::minus_intersect" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<descriptions defaultDescription="minus_intersect"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="NA_SALES">
+    <resourceUri>NA_SALES</resourceUri>
+  </DataSource>
+  <DataSource id="EU_SALES">
+    <resourceUri>EU_SALES</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+    <viewAttributes>
+      <viewAttribute id="CUSTOMER">
+        <descriptions defaultDescription="CUSTOMER"/>
+      </viewAttribute>
+      <viewAttribute id="PRODUCTS">
+        <descriptions defaultDescription="PRODUCTS"/>
+      </viewAttribute>
+      <viewAttribute id="COUNTRY">
+        <descriptions defaultDescription="COUNTRY"/>
+      </viewAttribute>
+      <viewAttribute id="SALES_YEAR">
+        <descriptions defaultDescription="SALES_YEAR"/>
+      </viewAttribute>
+      <viewAttribute id="SALES_VALUE">
+        <descriptions defaultDescription="SALES_VALUE"/>
+      </viewAttribute>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <restrictedViewAttributes/>
+    <input node="NA_SALES">
+      <mapping xsi:type="Calculation:AttributeMapping" target="CUSTOMER" source="CUSTOMER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCTS" source="PRODUCTS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COUNTRY" source="COUNTRY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SALES_YEAR" source="SALES_YEAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SALES_VALUE" source="SALES_VALUE"/>
+    </input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:IntersectView" id="Intersect_1">
+    <viewAttributes>
+      <viewAttribute id="CUSTOMER">
+        <descriptions defaultDescription="CUSTOMER"/>
+      </viewAttribute>
+      <viewAttribute id="PRODUCTS">
+        <descriptions defaultDescription="PRODUCTS"/>
+      </viewAttribute>
+      <viewAttribute id="COUNTRY">
+        <descriptions defaultDescription="COUNTRY"/>
+      </viewAttribute>
+      <viewAttribute id="SALES_YEAR">
+        <descriptions defaultDescription="SALES_YEAR"/>
+      </viewAttribute></viewAttributes>
+    <calculatedViewAttributes/>
+    <restrictedViewAttributes/>
+    <input node="Projection_1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="CUSTOMER" source="CUSTOMER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCTS" source="PRODUCTS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COUNTRY" source="COUNTRY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SALES_YEAR" source="SALES_YEAR"/></input>
+    <input node="Projection_2">
+      <mapping xsi:type="Calculation:AttributeMapping" target="CUSTOMER" source="CUSTOMER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCTS" source="PRODUCTS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COUNTRY" source="COUNTRY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SALES_YEAR" source="SALES_YEAR"/></input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_2">
+    <viewAttributes>
+      <viewAttribute id="CUSTOMER">
+        <descriptions defaultDescription="CUSTOMER"/>
+      </viewAttribute>
+      <viewAttribute id="PRODUCTS">
+        <descriptions defaultDescription="PRODUCTS"/>
+      </viewAttribute>
+      <viewAttribute id="COUNTRY">
+        <descriptions defaultDescription="COUNTRY"/>
+      </viewAttribute>
+      <viewAttribute id="SALES_YEAR">
+        <descriptions defaultDescription="SALES_YEAR"/>
+      </viewAttribute>
+      <viewAttribute id="SALES_VALUE">
+        <descriptions defaultDescription="SALES_VALUE"/>
+      </viewAttribute>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <restrictedViewAttributes/>
+    <input node="EU_SALES">
+      <mapping xsi:type="Calculation:AttributeMapping" target="CUSTOMER" source="CUSTOMER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCTS" source="PRODUCTS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COUNTRY" source="COUNTRY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SALES_YEAR" source="SALES_YEAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SALES_VALUE" source="SALES_VALUE"/>
+    </input>
+  </calculationView>
+</calculationViews>
+<logicalModel id="Intersect_1">
+  <attributes>
+    <attribute id="CUSTOMER" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CUSTOMER"/>
+      <keyMapping columnObjectName="Intersect_1" columnName="CUSTOMER"/>
+    </attribute>
+    <attribute id="PRODUCTS" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PRODUCTS"/>
+      <keyMapping columnObjectName="Intersect_1" columnName="PRODUCTS"/>
+    </attribute>
+    <attribute id="COUNTRY" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="COUNTRY"/>
+      <keyMapping columnObjectName="Intersect_1" columnName="COUNTRY"/>
+    </attribute>
+    <attribute id="SALES_YEAR" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SALES_YEAR"/>
+      <keyMapping columnObjectName="Intersect_1" columnName="SALES_YEAR"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/></logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="221" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="356"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Intersect_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="221" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_2" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302" y="356"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

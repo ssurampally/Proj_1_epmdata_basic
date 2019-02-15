@@ -1,0 +1,63 @@
+----------
+column table na_sales
+(customer nvarchar(30),
+ Products nvarchar(30),
+ Country nvarchar(30),
+ sales_year nvarchar(4),
+ sales_value decimal(9,2)
+ ); 
+ 
+ 
+ 
+ --------------------
+
+column table eu_sales
+(customer nvarchar(30),
+ Products nvarchar(30),
+ Country nvarchar(30),
+ sales_year nvarchar(4),
+ sales_value decimal(9,2)
+ ); 
+ 
+ 
+ ----
+
+insert into na_sales values('Kellogs', 'Oats', 'USA', '2018', 2000.00);
+insert into na_sales values('Kellogs', 'Cereal', 'USA', '2018', 1500.00);
+insert into na_sales values('Kellogs', 'Cereal', 'USA', '2017', 3000.00);
+
+insert into na_sales values('Starbucks', 'Coffee', 'USA', '2018', 4000.00);
+insert into na_sales values('Starbucks', 'Espresso', 'USA', '2018', 2000.00);
+
+
+insert into na_sales values('McDonalds', 'Meal', 'USA', '2018', 5000.00);
+insert into na_sales values('McDonalds', 'Coffee', 'USA', '2018', 1000.00);
+
+------------------------
+insert into eu_sales values('Nestle', 'Milk', 'Germany', '2018', 3000.00);
+insert into eu_sales values('Nestle', 'Cereal', 'Germany', '2018', 4500.00);
+insert into eu_sales values('Nestle', 'Cereal', 'Germany', '2017', 3000.00);
+insert into eu_sales values('Nestle', 'Water', 'Germany', '2017', 3000.00);
+
+insert into eu_sales values('Starbucks', 'Cake', 'UK', '2018', 3000.00);
+insert into eu_sales values('Starbucks', 'Espresso', 'UK', '2018', 2000.00);
+
+------------------------------------------------------
+
+
+select customer from na_sales
+ union
+select customer from eu_sales;
+
+------------------------------
+select products from na_sales
+ minus 
+ select products from eu_sales;
+----------------
+select customer from na_sales
+ intersect 
+ select customer from eu_sales;
+ 
+ ---------------------------------
+ 
+ select products from "Modelling::minus_intersect";

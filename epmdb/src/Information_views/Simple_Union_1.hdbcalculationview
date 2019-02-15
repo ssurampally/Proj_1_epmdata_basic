@@ -1,175 +1,175 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="modelling.Core::Simple_Union_1" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
-<descriptions defaultDescription="Simple_Union_1"/>
-<localVariables/>
-<variableMappings/>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" dimensionType="STANDARD" schemaVersion="3.0" dataCategory="DIMENSION" cacheInvalidationPeriod="NONE" id="Modelling::Simple_Union_1" applyPrivilegeType="NONE" outputViewType="Projection" enforceSqlExecution="false">
+<descriptions defaultDescription="Simple_Union_1"></descriptions>
+<localVariables></localVariables>
+<variableMappings></variableMappings>
 <dataSources>
-  <DataSource id="modelling.Core::Customer_master">
-    <resourceUri>modelling.Core::Customer_master</resourceUri>
+  <DataSource id="Modelling::Customer_master">
+    <resourceUri>Modelling::Customer_master</resourceUri>
   </DataSource>
-  <DataSource id="Projection_2$$$$modelling.Core::Customer_master$$">
-    <resourceUri>modelling.Core::Customer_master</resourceUri>
+  <DataSource id="Projection_2$$$$Modelling::Customer_master$$">
+    <resourceUri>Modelling::Customer_master</resourceUri>
   </DataSource>
 </dataSources>
 <calculationViews>
   <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1" filterExpressionLanguage="SQL">
     <viewAttributes>
       <viewAttribute id="PARTNERID">
-        <descriptions defaultDescription="PARTNERID"/>
+        <descriptions defaultDescription="PARTNERID"></descriptions>
       </viewAttribute>
       <viewAttribute id="PHONENUMBER">
-        <descriptions defaultDescription="PHONENUMBER"/>
+        <descriptions defaultDescription="PHONENUMBER"></descriptions>
       </viewAttribute>
       <viewAttribute id="COMPANYNAME">
-        <descriptions defaultDescription="COMPANYNAME"/>
+        <descriptions defaultDescription="COMPANYNAME"></descriptions>
       </viewAttribute>
       <viewAttribute id="CITY">
-        <descriptions defaultDescription="City"/>
+        <descriptions defaultDescription="City"></descriptions>
       </viewAttribute>
       <viewAttribute id="COUNTRY">
-        <descriptions defaultDescription="COUNTRY"/>
+        <descriptions defaultDescription="COUNTRY"></descriptions>
       </viewAttribute>
       <viewAttribute id="REGION">
-        <descriptions defaultDescription="REGION"/>
+        <descriptions defaultDescription="REGION"></descriptions>
       </viewAttribute>
     </viewAttributes>
-    <calculatedViewAttributes/>
-    <restrictedViewAttributes/>
-    <input node="modelling.Core::Customer_master">
-      <mapping xsi:type="Calculation:AttributeMapping" target="PARTNERID" source="PARTNERID"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="PHONENUMBER" source="PHONENUMBER"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="COMPANYNAME" source="COMPANYNAME"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="CITY" source="CITY"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="COUNTRY" source="COUNTRY"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="REGION" source="REGION"/>
+    <calculatedViewAttributes></calculatedViewAttributes>
+    <restrictedViewAttributes></restrictedViewAttributes>
+    <input node="Modelling::Customer_master">
+      <mapping xsi:type="Calculation:AttributeMapping" source="PARTNERID" target="PARTNERID"></mapping>
+      <mapping xsi:type="Calculation:AttributeMapping" source="PHONENUMBER" target="PHONENUMBER"></mapping>
+      <mapping xsi:type="Calculation:AttributeMapping" source="COMPANYNAME" target="COMPANYNAME"></mapping>
+      <mapping xsi:type="Calculation:AttributeMapping" source="CITY" target="CITY"></mapping>
+      <mapping xsi:type="Calculation:AttributeMapping" source="COUNTRY" target="COUNTRY"></mapping>
+      <mapping xsi:type="Calculation:AttributeMapping" source="REGION" target="REGION"></mapping>
     </input>
-    <filter>&quot;REGION&quot; = 'EMEA'</filter>
+    <filter>"REGION" = 'EMEA'</filter>
   </calculationView>
   <calculationView xsi:type="Calculation:ProjectionView" id="Projection_2" filterExpressionLanguage="SQL">
     <viewAttributes>
       <viewAttribute id="PARTNERID">
-        <descriptions defaultDescription="PARTNERID"/>
+        <descriptions defaultDescription="PARTNERID"></descriptions>
       </viewAttribute>
       <viewAttribute id="PHONENUMBER">
-        <descriptions defaultDescription="PHONENUMBER"/>
+        <descriptions defaultDescription="PHONENUMBER"></descriptions>
       </viewAttribute>
       <viewAttribute id="COMPANYNAME">
-        <descriptions defaultDescription="COMPANYNAME"/>
+        <descriptions defaultDescription="COMPANYNAME"></descriptions>
       </viewAttribute>
       <viewAttribute id="CITY">
-        <descriptions defaultDescription="City"/>
+        <descriptions defaultDescription="City"></descriptions>
       </viewAttribute>
       <viewAttribute id="COUNTRY">
-        <descriptions defaultDescription="COUNTRY"/>
+        <descriptions defaultDescription="COUNTRY"></descriptions>
       </viewAttribute>
       <viewAttribute id="REGION">
-        <descriptions defaultDescription="REGION"/>
+        <descriptions defaultDescription="REGION"></descriptions>
       </viewAttribute>
     </viewAttributes>
-    <calculatedViewAttributes/>
-    <restrictedViewAttributes/>
-    <input node="Projection_2$$$$modelling.Core::Customer_master$$">
-      <mapping xsi:type="Calculation:AttributeMapping" target="PARTNERID" source="PARTNERID"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="PHONENUMBER" source="PHONENUMBER"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="COMPANYNAME" source="COMPANYNAME"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="CITY" source="CITY"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="COUNTRY" source="COUNTRY"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="REGION" source="REGION"/>
+    <calculatedViewAttributes></calculatedViewAttributes>
+    <restrictedViewAttributes></restrictedViewAttributes>
+    <input node="Projection_2$$$$Modelling::Customer_master$$">
+      <mapping xsi:type="Calculation:AttributeMapping" source="PARTNERID" target="PARTNERID"></mapping>
+      <mapping xsi:type="Calculation:AttributeMapping" source="PHONENUMBER" target="PHONENUMBER"></mapping>
+      <mapping xsi:type="Calculation:AttributeMapping" source="COMPANYNAME" target="COMPANYNAME"></mapping>
+      <mapping xsi:type="Calculation:AttributeMapping" source="CITY" target="CITY"></mapping>
+      <mapping xsi:type="Calculation:AttributeMapping" source="COUNTRY" target="COUNTRY"></mapping>
+      <mapping xsi:type="Calculation:AttributeMapping" source="REGION" target="REGION"></mapping>
     </input>
-    <filter>&quot;REGION&quot; = 'AMER'</filter>
+    <filter>"REGION" = 'AMER'</filter>
   </calculationView>
   <calculationView xsi:type="Calculation:UnionView" id="Union_1">
     <viewAttributes>
       <viewAttribute id="PARTNERID">
-        <descriptions defaultDescription="PARTNERID"/>
+        <descriptions defaultDescription="PARTNERID"></descriptions>
       </viewAttribute>
       <viewAttribute id="PHONENUMBER">
-        <descriptions defaultDescription="PHONENUMBER"/>
+        <descriptions defaultDescription="PHONENUMBER"></descriptions>
       </viewAttribute>
       <viewAttribute id="COMPANYNAME">
-        <descriptions defaultDescription="COMPANYNAME"/>
+        <descriptions defaultDescription="COMPANYNAME"></descriptions>
       </viewAttribute>
       <viewAttribute id="CITY">
-        <descriptions defaultDescription="City"/>
+        <descriptions defaultDescription="City"></descriptions>
       </viewAttribute>
       <viewAttribute id="COUNTRY">
-        <descriptions defaultDescription="COUNTRY"/>
+        <descriptions defaultDescription="COUNTRY"></descriptions>
       </viewAttribute>
       <viewAttribute id="REGION">
-        <descriptions defaultDescription="REGION"/>
+        <descriptions defaultDescription="REGION"></descriptions>
       </viewAttribute>
     </viewAttributes>
-    <calculatedViewAttributes/>
-    <restrictedViewAttributes/>
-    <input node="Projection_1">
-      <mapping xsi:type="Calculation:AttributeMapping" target="PARTNERID" source="PARTNERID"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="PHONENUMBER" source="PHONENUMBER"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="COMPANYNAME" source="COMPANYNAME"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="CITY" source="CITY"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="COUNTRY" source="COUNTRY"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="REGION" source="REGION"/>
+    <calculatedViewAttributes></calculatedViewAttributes>
+    <restrictedViewAttributes></restrictedViewAttributes>
+    <input node="Projection_1" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" source="PARTNERID" target="PARTNERID"></mapping>
+      <mapping xsi:type="Calculation:AttributeMapping" source="PHONENUMBER" target="PHONENUMBER"></mapping>
+      <mapping xsi:type="Calculation:AttributeMapping" source="COMPANYNAME" target="COMPANYNAME"></mapping>
+      <mapping xsi:type="Calculation:AttributeMapping" source="CITY" target="CITY"></mapping>
+      <mapping xsi:type="Calculation:AttributeMapping" source="COUNTRY" target="COUNTRY"></mapping>
+      <mapping xsi:type="Calculation:AttributeMapping" source="REGION" target="REGION"></mapping>
     </input>
-    <input node="Projection_2">
-      <mapping xsi:type="Calculation:AttributeMapping" target="PARTNERID" source="PARTNERID"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="PHONENUMBER" source="PHONENUMBER"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="COMPANYNAME" source="COMPANYNAME"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="CITY" source="CITY"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="COUNTRY" source="COUNTRY"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="REGION" source="REGION"/>
+    <input node="Projection_2" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" source="PARTNERID" target="PARTNERID"></mapping>
+      <mapping xsi:type="Calculation:AttributeMapping" source="PHONENUMBER" target="PHONENUMBER"></mapping>
+      <mapping xsi:type="Calculation:AttributeMapping" source="COMPANYNAME" target="COMPANYNAME"></mapping>
+      <mapping xsi:type="Calculation:AttributeMapping" source="CITY" target="CITY"></mapping>
+      <mapping xsi:type="Calculation:AttributeMapping" source="COUNTRY" target="COUNTRY"></mapping>
+      <mapping xsi:type="Calculation:AttributeMapping" source="REGION" target="REGION"></mapping>
     </input>
   </calculationView>
 </calculationViews>
 <logicalModel id="Union_1">
   <attributes>
-    <attribute id="PARTNERID" order="1" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="PARTNERID"/>
-      <keyMapping columnObjectName="Union_1" columnName="PARTNERID"/>
+    <attribute id="PARTNERID" displayAttribute="false" order="1" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PARTNERID"></descriptions>
+      <keyMapping columnObjectName="Union_1" columnName="PARTNERID"></keyMapping>
     </attribute>
-    <attribute id="PHONENUMBER" order="2" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="PHONENUMBER"/>
-      <keyMapping columnObjectName="Union_1" columnName="PHONENUMBER"/>
+    <attribute id="PHONENUMBER" displayAttribute="false" order="2" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PHONENUMBER"></descriptions>
+      <keyMapping columnObjectName="Union_1" columnName="PHONENUMBER"></keyMapping>
     </attribute>
-    <attribute id="COMPANYNAME" order="3" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="COMPANYNAME"/>
-      <keyMapping columnObjectName="Union_1" columnName="COMPANYNAME"/>
+    <attribute id="COMPANYNAME" displayAttribute="false" order="3" attributeHierarchyActive="false">
+      <descriptions defaultDescription="COMPANYNAME"></descriptions>
+      <keyMapping columnObjectName="Union_1" columnName="COMPANYNAME"></keyMapping>
     </attribute>
-    <attribute id="CITY" order="4" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="City"/>
-      <keyMapping columnObjectName="Union_1" columnName="CITY"/>
+    <attribute id="CITY" displayAttribute="false" order="4" attributeHierarchyActive="false">
+      <descriptions defaultDescription="City"></descriptions>
+      <keyMapping columnObjectName="Union_1" columnName="CITY"></keyMapping>
     </attribute>
-    <attribute id="COUNTRY" order="5" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="COUNTRY"/>
-      <keyMapping columnObjectName="Union_1" columnName="COUNTRY"/>
+    <attribute id="COUNTRY" displayAttribute="false" order="5" attributeHierarchyActive="false">
+      <descriptions defaultDescription="COUNTRY"></descriptions>
+      <keyMapping columnObjectName="Union_1" columnName="COUNTRY"></keyMapping>
     </attribute>
-    <attribute id="REGION" order="6" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="REGION"/>
-      <keyMapping columnObjectName="Union_1" columnName="REGION"/>
+    <attribute id="REGION" displayAttribute="false" order="6" attributeHierarchyActive="false">
+      <descriptions defaultDescription="REGION"></descriptions>
+      <keyMapping columnObjectName="Union_1" columnName="REGION"></keyMapping>
     </attribute>
   </attributes>
-  <calculatedAttributes/>
-  <baseMeasures/>
-  <calculatedMeasures/>
-  <restrictedMeasures/>
+  <calculatedAttributes></calculatedAttributes>
+  <baseMeasures></baseMeasures>
+  <calculatedMeasures></calculatedMeasures>
+  <restrictedMeasures></restrictedMeasures>
 </logicalModel>
 <layout>
   <shapes>
-    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
-      <upperLeftCorner x="221.11302679000914" y="112"/>
+    <shape expanded="true" modelObjectNameSpace="MeasureGroup" modelObjectName="Output">
+      <upperLeftCorner x="221" y="112"></upperLeftCorner>
     
-      <rectangleSize width="160"/>
+      <rectangleSize width="160"></rectangleSize>
     </shape>
   
-    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="92.00000000000001" y="356.9999988079071"/>
-      <rectangleSize height="30" width="160"/>
+    <shape expanded="true" modelObjectNameSpace="CalculationView" modelObjectName="Projection_1">
+      <upperLeftCorner x="92" y="356"></upperLeftCorner>
+      <rectangleSize width="160" height="30"></rectangleSize>
     </shape>
-    <shape expanded="true" modelObjectName="Projection_2" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="302.00000000000006" y="356.9999988079071"/>
-      <rectangleSize height="30" width="160"/>
+    <shape expanded="true" modelObjectNameSpace="CalculationView" modelObjectName="Projection_2">
+      <upperLeftCorner x="302" y="356"></upperLeftCorner>
+      <rectangleSize width="160" height="30"></rectangleSize>
     </shape>
-    <shape expanded="true" modelObjectName="Union_1" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="221.11302679000914" y="217"/>
-      <rectangleSize height="30" width="160"/>
+    <shape expanded="true" modelObjectNameSpace="CalculationView" modelObjectName="Union_1">
+      <upperLeftCorner x="221" y="217"></upperLeftCorner>
+      <rectangleSize width="160" height="30"></rectangleSize>
     </shape>
   </shapes>
 </layout>

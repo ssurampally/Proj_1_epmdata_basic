@@ -1,0 +1,419 @@
+-------------------------------------------------
+-- Day 1  -- Basic SQL
+---------------------------------------------------
+
+---- let us start with tooling in XSA,
+
+   --- Log on to Command Line tools,
+   --- List out, API End Point,  services and Applications in SAP space.
+
+    -- Service is resource required for our application, the service could be a database, User authentication, connection to datbase etcc
+    
+    -- service instance will be created of the service type, it will bind to application.,
+    we can see all the service-instances in the space, $xs services..,
+   
+  
+     
+   --  Basics of Organization and Space architecture,  --- Reference to Tech Ed presentation, 
+
+      Org 
+        Space
+          Projects
+
+   -- Log on XS Admin Cockpit 
+            users and roles
+
+   -- Log on to Web IDE for HANA,
+           Dev WorkSpace,  Project Settings, 
+           Enabling the features 
+   -- Database Exploerer,  add the XS classic Database,
+   
+     Showing all the schemas,  just running some simple SQL,
+
+   select current_schema from dummy;
+    
+-- display the output of the table, 
+
+
+------------------------------------
+
+--- Getting started with Web IDE HANA Workspace, creating a simple MTA,
+
+     -- hdiconfig file,
+     -- yaml file
+     -- namespace file
+     -- package.json file
+
+ creating a simple DB module with out any objects,
+
+    observe, what are services created in system by XS CLI and also,
+
+notice the yaml file is configured with that services.
+--------------------------------------------
+
+--- Jump on to Database explorer
+
+     
+Test the schema and user of HDI container,
+
+	SELECT CURRENT_SCHEMA  FROM DUMMY;
+	SELECT CURRENT_USER  FROM DUMMY;
+
+
+--------------------------------------------------------
+
+
+--- Creating a Simple table Business partner -- Same syntax.
+
+CREATE COLUMN TABLE BUSINESS_PARTNER(
+	"PARTNERID" NVARCHAR(10) NOT NULL,
+	"PHONENUMBER" NVARCHAR(15),
+	"ADDRESSID" NVARCHAR(10),
+	"COMPANYNAME" NVARCHAR(100),
+	PRIMARY KEY ("PARTNERID") );
+
+-- note: if we do n't specify COLUMN table, by default COLUMN table is created, for ROW
+-- tables explicit ROW keyword is required.
+
+
+---- Let us create an another table, address WITH No COLUMN keyword,
+
+CREATE TABLE ADDRESS(
+	"ADDRESSID" NVARCHAR(10) NOT NULL,
+	"CITY" NVARCHAR(30),
+	"COUNTRY" NVARCHAR(20),
+	"REGION" NVARCHAR(10),
+	PRIMARY KEY ("ADDRESSID")
+	) ;
+
+-------------------------------
+
+--- Try a ROW table creation,
+
+ CREATE ROW TABLE TEST_ROW
+  (ID INT PRIMARY KEY,
+   NAME VARCHAR(20)) ;
+
+--- this can be dropped, we don't need it for after.
+--------------------------------------------------
+
+--- Let us insert some data into the tables,
+INSERT INTO "BUSINESS_PARTNER" VALUES('100001','234-123-1234','A-1001','Nestle');
+INSERT INTO "BUSINESS_PARTNER" VALUES('100002','423-134-1344','B-1001','Unilever');
+
+---------------
+INSERT INTO ADDRESS VALUES('A-1001', 'NewYork', 'USA', 'America') ;
+INSERT INTO ADDRESS VALUES ('B-1001', 'Toronto', 'Canada', 'America') ;
+
+-----
+--- Create a SQL view on the 2 tables,
+CREATE VIEW CUSTOMER_MASTER
+(PARTNERID,
+ PHONENUMBER,
+ COMPANYNAME,
+ COUNTRY,
+ REGION ) AS SELECT PARTNERID,
+ PHONENUMBER,
+ COMPANYNAME,
+ COUNTRY,
+ REGION FROM BUSINESS_PARTNER BP LEFT JOIN ADDRESS A ON BP.ADDRESSID = A.ADDRESSID ;
+
+------
+
+  also run some scalar functions to check the output,
+	
+   SELECT TO_INT(10.5) "to int" FROM DUMMY;
+   SELECT TO_DATE('2018-10-01', 'YYYY-MM-DD') FROM DUMMY ;
+
+
+Note:  always compare the HANA XS classic Vs XS Advanced in every example..
+
+
+
+
+
+
+ -----------------------------------------------------------
+
+  Day 2 ----
+
+--------------------------------------------------------------------------
+
+-- Set up HXE on Google Cloud Platform,  -- 15 mins.
+
+----------------------------------------------
+
+  Let us start creating the objects in design time only..,
+
+  2 options,  using CDS or SQL DDL, 
+ 
+ let us start with SQL DDL,  pick the code from Github project --- Proj_1_epm_data_basic
+
+ Create Business partner and Addresses tables using SQL DDL, 
+
+Also prepare the dataloads using csv files and hdbtabledata files.
+
+ -- Schema less development,   
+ -- All or nothing approach, if one object failes, nothing will be deployed.
+
+--- 
+
+
+ create DB views,
+-------------------------------------------------
+  Just remove the CREATE or ALTER statments for the above SQL, builder will take care of necessary action,
+  based on the source code,
+
+  just add/remove one more column in the desgin time, without changing the script, system automatically makes the change in Database.
+
+
+
+
+---------------------------------------------------------------------------
+
+ --- now Let us get on to the 2nd option, CDS
+
+  --- We can start with Grpahical, easy way to build it., 
+  -- 
+   create the above EPM 2 tables and Views using CDS... -- Reference to GitHub project , Proj_1_epm_data_basic
+  -- load the data using CDS files.
+
+
+  -----------------------------------------------------------------------------------------------
+
+----------------------
+
+ Day 3  --- Create a Basic Calcualtion CV
+
+------------------------------------------
+
+-- Create a basic CV,
+
+-- Create basic Stored Procedure,
+
+ call the procedure with parameters,
+
+-- Create basic Function
+
+ call the scalar function, in select function() from dummy;
+
+-- calling table function, 
+
+select * from "get_partner_roles"() ;
+
+
+----- Creating a flowGraph
+
+
+
+
+-------------- Creating a synonym
+
+Always Json format, or use Graphicl editor
+
+----- Creating a Sequences,
+
+
+
+---- Creating Triggers.
+
+
+
+-------------------------------------------
+Day 4  --- Access to container, non hdi container, 
+-----------------------------------------------------------
+
+Using Synonyms - Central objects to hold the info of all the references outside of container.
+
+Synonyms can be created for any object in XSA, Stored procedures, Functions etc..
+
+Accessing S/4 schema objects in HANA,
+
+   1. Create a user Provide service to connect to Database
+   2. Create a role in Database
+   3. Grant the role to Continer user, using .hdbgrants file in cfg folder.
+   4. Create Synonyms.
+
+
+
+
+--------------------------------------------
+Day 5 -- Access to cross Containers with in Project, Cross container outside of project
+---------------------------------------------
+
+ Simialar steps as non HDI container
+-------------------------------------------
+
+
+    
+---------------------------------------------
+Day 6 -- Deploying the project
+
+----------------------------------------
+
+   -- In the Development space
+   -- also in Central space
+
+ xs mtas -- to display all the MTA in the system
+
+ xs deploy c:\location\filename .mtar
+ xs undeploy <mta>
+ 
+---- also deploy hdi-container with schema name hardcoded,  by adding a configuration parameter in yaml file
+
+ observe the difference in Built container and deployed container.
+
+you may choose to hard code the scehema 
+-----------------------------------------------
+----------------------------------------------------------
+
+
+Day 7 -- Calculation views - Advanced functionalities,
+
+   -- Working with name space..,  Create a name space file in the CV folder.
+
+   --  Create a dimension CV, Standard., 
+
+   Ex.1 -- Customer_master CV
+ -Filter Expression -- Always keep the filters on Expression, not on the column directly, can't edit it.
+   Ex.2 -- Products_master CV
+
+   --  Create a dimension CV, Time type.,
+    Ex.1 -- Time_master CV
+
+      -- Generate time Data in Database explorer.
+
+  -- Transactional Data CVs,
+   
+  Ex.1-- Create Sales CV, with CUBE type.,
+  Ex.2 -- Create Sales stacked CV, with all dimension joins
+  Ex.3 -- Created Sales Star Join CV with dimension joins
+  
+ Ex.4 - Keep flag and Transparent filter
+
+--------------------------------------------------
+Day 8
+------------------------------------------------
+  -- Data set operations,
+
+  Ex.6 -- Union, Intersect and Minus
+
+     Joins  -- Temporal Joins
+	    -- Text Joins
+       Ex.6 -- Create a language table,  Slight table using synonyms SMEAL and SMEALT.
+
+	    -- SPatial Joins
+	    -- Dynamic Joins -- bring up the scenario of Dynamic join
+     mulitple columns used in Join,  join can occur based on the columns selected by clietn query.,
+       -- Aggregation or calculation happens before the join is executed based on the selected columns, then Join.
+       -- Example of Region and Country
+
+    -- Optimize join columns -- tool does not bring the join columns from database by default, unless the client query requests.
+
+      left outer join, where no field is selected from the right table with cardinality n : 1
+
+-----------------------------------
+ RANK node :
+   Ex.5 -- Rank node with new options  - push down the filter 
+-------------------------------------
+
+
+----------------------
+
+Day 9 -- Calculation views - advanced functionalities
+------------------------------------------------------
+    -- New Node, table function
+    -- K annonyamization
+
+    -- Calculation view properties
+      Extract Semantics
+      Currency Conversion
+
+     -----------
+
+  -- View properties, 
+
+     Deprecate view
+   -- Propagae instantation to SQL views,
+              for the CVs used in SQL views
+
+ -- Data Access - Privileges
+
+-----------------------------------------------
+
+--------------------------------------
+Day 8.1 -- FlowGraphs - Detailed
+--------------------------------------------
+
+
+
+
+--------------------------------------
+Day 9 -- Stored Procedures
+------------------------------
+
+-- running a block of statment as out side of procedure,
+-- Debugging the code
+
+
+
+---------------------------------
+
+Day 10 -- User defined table functions  -- Detailed.
+
+-----------------------------------------
+
+
+
+
+
+Day 10.1 -- XSA migration,
+
+
+
+--------------------------------------------------------
+
+Day 11 -- Git hub Integration
+
+
+
+
+--------------------------------------------------------------
+
+Day 12 -- XSJS and Node JS application introduction,
+
+  -- basics of Java script
+
+  -- Express module
+
+
+
+----------------------------------------
+Day 13 -- Accessing DB objects in Node JS, tables functions, stored procedures
+ 
+
+
+
+
+---------------------------
+
+Day 14, Node JS continued
+
+
+
+
+
+----------------------------
+
+Day 15, Creating a basic Web module with UI5
+
+
+
+
+Day 16, Creating a UI5 module contd..
+-------------------------------------------------
+
+
+
+
+----------------------------------------------------------------

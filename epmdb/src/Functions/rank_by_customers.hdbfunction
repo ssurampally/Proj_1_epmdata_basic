@@ -1,0 +1,16 @@
+FUNCTION "sales_ranking_customers" (IN MYTAB "Sales_by_Customer")
+	RETURNS table(company_name VARCHAR(20), sales Decimal(10,2), sales_rank VARCHAR(2))
+	LANGUAGE SQLSCRIPT 
+	SQL SECURITY INVOKER AS 
+BEGIN 
+RETURN
+ 	 select "COMPANY_NAME" as company_name, "SALES" as sales,  "SALES_RANK" as sales_rank from(                
+		           select  "COMPANYNAME" as company_name, sum("GROSSAMOUNT") as sales, 
+		        	  dense_rank() over ( order by sum("GROSSAMOUNT") desc ) as sales_rank
+		              from :MYTAB
+		             group by "COMPANYNAME" 
+		              order by sales_rank, "COMPANYNAME"
+		)                            
+		where sales_rank < 6;   
+		
+END;
