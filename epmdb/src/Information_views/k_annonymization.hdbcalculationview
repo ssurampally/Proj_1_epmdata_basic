@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="Modelling::k_annonymization" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<descriptions defaultDescription="k_annonymization"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="JOBS">
+    <resourceUri>JOBS</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews>
+  <calculationView xsi:type="Calculation:AnonymizeView" id="Anonymize_1" method="kAnonymity">
+    <viewAttributes>
+      <viewAttribute id="ID">
+        <descriptions defaultDescription="Opinion ID"/>
+      </viewAttribute>
+      <viewAttribute id="ORIGIN_COUNTRY">
+        <descriptions defaultDescription="ORIGIN_COUNTRY"/>
+      </viewAttribute>
+      <viewAttribute id="CURRENT_ROLE">
+        <descriptions defaultDescription="CURRENT_ROLE"/>
+      </viewAttribute>
+      <viewAttribute id="JOB_LIKES">
+        <descriptions defaultDescription="JOB_LIKES"/>
+      </viewAttribute>
+      <viewAttribute id="AGE">
+        <descriptions defaultDescription="AGE"/>
+      </viewAttribute>
+      <viewAttribute id="CURRENT_TENURE">
+        <descriptions defaultDescription="CURRENT_TENURE"/>
+      </viewAttribute>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <restrictedViewAttributes/>
+    <input node="JOBS">
+      <mapping xsi:type="Calculation:AttributeMapping" target="ID" source="ID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORIGIN_COUNTRY" source="ORIGIN_COUNTRY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CURRENT_ROLE" source="CURRENT_ROLE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOB_LIKES" source="JOB_LIKES"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AGE" source="AGE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CURRENT_TENURE" source="CURRENT_TENURE"/>
+    </input>
+    <anonymizeParameterization>
+      <seqColumn>ID</seqColumn>
+      <k>2</k>
+      <qidColumn id="ORIGIN_COUNTRY"/>
+      <qidColumnHierarchy id="ORIGIN_COUNTRY">Canada;PA;*Costa Rica;NA;*Mexico;SA;*United States;RA;*United Kingdom;LA;*Australia;AP;*Poland;EU;*</qidColumnHierarchy>
+    </anonymizeParameterization>
+  </calculationView>
+</calculationViews>
+<logicalModel id="Anonymize_1">
+  <attributes>
+    <attribute id="ID" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Opinion ID"/>
+      <keyMapping columnObjectName="Anonymize_1" columnName="ID"/>
+    </attribute>
+    <attribute id="ORIGIN_COUNTRY" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ORIGIN_COUNTRY"/>
+      <keyMapping columnObjectName="Anonymize_1" columnName="ORIGIN_COUNTRY"/>
+    </attribute>
+    <attribute id="CURRENT_ROLE" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CURRENT_ROLE"/>
+      <keyMapping columnObjectName="Anonymize_1" columnName="CURRENT_ROLE"/>
+    </attribute>
+    <attribute id="JOB_LIKES" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="JOB_LIKES"/>
+      <keyMapping columnObjectName="Anonymize_1" columnName="JOB_LIKES"/>
+    </attribute>
+    <attribute id="AGE" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="AGE"/>
+      <keyMapping columnObjectName="Anonymize_1" columnName="AGE"/>
+    </attribute>
+    <attribute id="CURRENT_TENURE" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CURRENT_TENURE"/>
+      <keyMapping columnObjectName="Anonymize_1" columnName="CURRENT_TENURE"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/></logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="92" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Anonymize_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

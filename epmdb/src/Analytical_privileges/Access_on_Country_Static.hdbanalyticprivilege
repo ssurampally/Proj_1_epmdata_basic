@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Privilege:analyticPrivilege xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:AccessControl="http://www.sap.com/ndb/SQLCoreModelAccessControl.ecore" xmlns:Privilege="http://www.sap.com/ndb/BiModelPrivilege.ecore" id="Access_on_Country::Access_on_Country_Static" privilegeType="SQL_ANALYTIC_PRIVILEGE" schemaVersion="1.1">
+<descriptions defaultDescription="Access_on_Country"/>
+<securedModels>
+  <modelUri>Modelling::Sales_starJoin</modelUri>
+</securedModels>
+
+<restriction>
+  <filter attributeName="COUNTRY" xsi:type="Privilege:AttributeFilter">
+    <valueFilter xsi:type="AccessControl:SingleValueFilter" including="true" value="US" lowValue="undefined" highValue="undefined"/>
+  </filter>
+  <attributeName>COUNTRY</attributeName>
+  <originInformationModelUri>Modelling::Customer_master</originInformationModelUri>
+</restriction>
+</Privilege:analyticPrivilege>

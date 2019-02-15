@@ -1,0 +1,43 @@
+GRANT STRUCTURED PRIVILEGE PROJ_1_EPMDATA_BASIC_HDI_EPMDB_1."Access_on_Country::Access_on_Country_Static" 
+	TO PROJ_1_EPMDATA_BASIC_HDI_EPMDB_1#OO ;
+	
+------------------------------------
+
+ 
+COLUMN TABLE DYNAMIC_PRIVILEGES
+
+("USER_NAME" NVARCHAR(120),"REGION" NVARCHAR(30));
+
+
+---------------------
+
+insert into DYNAMIC_PRIVILEGES  values('XSA_DEV','EMEA');
+insert into DYNAMIC_PRIVILEGES  values('SSSURAMPALLY','AMER');
+
+---------------------------
+
+procedure DYNAMIC_AP_DEMO (out OUT_FILTER VARCHAR(500))
+
+language sqlscript sql security definer reads sql data as
+
+v_Filter VARCHAR(500);  
+
+CURSOR v_Cursor
+
+FOR SELECT "REGION" FROM DYNAMIC_PRIVILEGES
+
+WHERE "USER_NAME" = SESSION_USER;
+
+BEGIN
+
+OPEN v_Cursor;  
+
+FETCH v_Cursor INTO v_Filter;
+
+OUT_FILTER := v_Filter;
+
+CLOSE v_Cursor; 
+
+END;
+
+------------------------------------------
