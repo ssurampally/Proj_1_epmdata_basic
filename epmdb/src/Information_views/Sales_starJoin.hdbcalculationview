@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="3.0" dataCategory="CUBE" cacheInvalidationPeriod="NONE" id="Modelling::Sales_starJoin" applyPrivilegeType="SQL_ANALYTIC_PRIVILEGE" enforceSqlExecution="false" runWithInvokerPrivileges="true">
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="3.0" dataCategory="CUBE" cacheInvalidationPeriod="NONE" id="Modelling::Sales_starJoin" applyPrivilegeType="SQL_ANALYTIC_PRIVILEGE" enforceSqlExecution="false" runWithInvokerPrivileges="false">
 <descriptions defaultDescription="Sales_starJoin"/>
 <localVariables/>
 <variableMappings/>

@@ -1,0 +1,9 @@
+set schema "PROJ_1_EPMDATA_BASIC_HDI_EPMDB_1#DI";   -- Setting the HDI schema name for the session
+
+create local temporary column table "#ROLES" like "_SYS_DI"."TT_SCHEMA_ROLES";
+
+insert into "#ROLES" ("ROLE_NAME", "PRINCIPAL_SCHEMA_NAME", "PRINCIPAL_NAME") values ('', '', 'SSURAMPALLY');
+
+call "PROJ_1_EPMDATA_BASIC_HDI_EPMDB_1#DI"."GRANT_CONTAINER_SCHEMA_ROLES"("#ROLES", "_SYS_DI"."T_NO_PARAMETERS", ?, ?, ?);
+--call "MYAPP_HDI_DB_1#DI"."REVOKE_CONTAINER_SCHEMA_ROLES"("#ROLES", "_SYS_DI"."T_NO_PARAMETERS", ?, ?, ?);
+drop table "#ROLES";

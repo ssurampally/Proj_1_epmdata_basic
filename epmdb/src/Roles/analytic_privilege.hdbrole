@@ -1,0 +1,13 @@
+{
+	"role": {
+		"name":"analytical_privileges_to_uesr",
+		"schema_privileges":[{
+			"privileges": [ "SELECT"]
+			}],
+		"schema_analytic_privileges": [
+            {
+                "privileges":[ "Access_on_Country::Access_on_Country_Static" ]
+            }]   
+		
+	}
+}
