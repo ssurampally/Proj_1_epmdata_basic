@@ -325,6 +325,11 @@ Day 9 -- Calculation views - advanced functionalities
     -- New Node, table function
     -- K annonyamization
 
+    -- Data Access - Privileges
+      -- Analytical privilege example
+      
+      
+     
     -- Calculation view properties
       Extract Semantics
       Currency Conversion
@@ -337,21 +342,25 @@ Day 9 -- Calculation views - advanced functionalities
    -- Propagae instantation to SQL views,
               for the CVs used in SQL views
 
- -- Data Access - Privileges
 
 -----------------------------------------------
 
 --------------------------------------
-Day 8.1 -- FlowGraphs - Detailed
---------------------------------------------
-
-
-
-
---------------------------------------
-Day 9 -- Stored Procedures
+Day 10 -- Stored Procedures
 ------------------------------
-
+-- Simple Stored procedure, get_po_header_data,
+    -- Structure and header body explanation, 
+    
+ -- Library  -- Custom 
+				Standard
+-- Example: get_master_data_library_wrapper procedure
+ -- Example: Split_format_Strings_library procedure
+ 
+ ----------------
+ 
+ Anonymus Block,
+ 
+     
 -- running a block of statment as out side of procedure,
 -- Debugging the code
 

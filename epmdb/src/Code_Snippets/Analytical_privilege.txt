@@ -1,6 +1,11 @@
-GRANT STRUCTURED PRIVILEGE PROJ_1_EPMDATA_BASIC_HDI_EPMDB_1."Access_on_Country::Access_on_Country_Static" 
-	TO PROJ_1_EPMDATA_BASIC_HDI_EPMDB_1#OO ;
-	
+-- Make sure, this is run using Admin Console
+
+set schema "PROJ_1_EPMDATA_BASIC_HDI_EPMDB_1#DI";
+create local temporary column table "#ROLES" like "_SYS_DI"."TT_SCHEMA_ROLES";
+insert into "#ROLES" ("ROLE_NAME", "PRINCIPAL_SCHEMA_NAME", "PRINCIPAL_NAME") values ('analytical_privileges_to_user', '', 'SSURAMPALLY');
+call "PROJ_1_EPMDATA_BASIC_HDI_EPMDB_1#DI"."GRANT_CONTAINER_SCHEMA_ROLES"("#ROLES", "_SYS_DI"."T_NO_PARAMETERS", ?, ?, ?);
+--call "MYAPP_HDI_DB_1#DI"."REVOKE_CONTAINER_SCHEMA_ROLES"("#ROLES", "_SYS_DI"."T_NO_PARAMETERS", ?, ?, ?);
+drop table "#ROLES";
 ------------------------------------
 
  

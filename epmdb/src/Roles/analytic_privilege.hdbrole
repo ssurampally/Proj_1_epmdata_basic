@@ -1,6 +1,6 @@
 {
 	"role": {
-		"name":"analytical_privileges_to_uesr",
+		"name":"analytical_privileges_to_user",
 		"schema_privileges":[{
 			"privileges": [ "SELECT"]
 			}],
