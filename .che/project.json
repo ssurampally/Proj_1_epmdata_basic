@@ -1,1 +1,1 @@
-{"type":"mta","builders":{"default":"mtabuilder","configs":{}},"runners":{"configs":{}},"attributes":{"sap.watt.common.setting":["{\"hdbInactiveFiles\":{\"inactiveFileList\":[\"/Proj_1_epmdata_basic/epmdb/src/Procedures/Split_format_strings_Library.hdbprocedure\"]}}"]},"mixinTypes":[]}
+{"type":"mta","builders":{"default":"mtabuilder","configs":{}},"runners":{"configs":{}},"attributes":{"sap.watt.common.setting":["{\"hdbInactiveFiles\":{\"inactiveFileList\":[]}}"]},"mixinTypes":[]}

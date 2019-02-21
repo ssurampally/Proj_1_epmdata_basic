@@ -359,19 +359,44 @@ Day 10 -- Stored Procedures
  ----------------
  
  Anonymus Block,
- 
-     
+   
 -- running a block of statment as out side of procedure,
+    --Example: Get the Example get_PO_header procedure, code in between 
+    Do (  (Output parameter)    )
+    begin
+     
+     end ;
+
+------------------------------
 -- Debugging the code
 
+ example: take the get_PO_header_data procedure
+ example 2: analyze_error procedure
+  
+ -----------------------------
+ Performance Analysis of Stored Procedure
 
-
----------------------------------
-
-Day 10 -- User defined table functions  -- Detailed.
-
+----------------------------
+-- Decision tables -- Not Supported in future releases of XSA.
+   replaced by HANA rules framework
 -----------------------------------------
-
+Day 11 -- ETL FlowGraphs,
+ 
+ -- Transformations,
+ 
+ 
+ 
+ 
+ -- NDSO
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ -------------------------
 
 
 

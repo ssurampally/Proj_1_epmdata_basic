@@ -1,4 +1,4 @@
-PROCEDURE "split_format_strings" ( 
+PROCEDURE "split_format_strings_built_library" ( 
 	   out ex_strout table(RESULT nvarchar(5000)),
        out ex_tabout table(PRODUCTID nvarchar(10), PRICE decimal(15,2)) ) 
    LANGUAGE SQLSCRIPT

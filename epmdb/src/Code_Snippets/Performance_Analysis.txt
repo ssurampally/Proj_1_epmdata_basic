@@ -1,0 +1,32 @@
+--
+Open long_running_proc   procedure,
+
+call the procedure with syntax,
+---------------
+CALL "long_running_proc"( 
+	         D => 100,                     
+             IM_PRODUCT_FILTER_STRING => 'CATEGORY = ''Notebooks''',
+             T1 => ?, 
+             T2 => ?  );
+             
+    select * from M_ACTIVE_PROCEDURES where procedure_name = 'long_running_proc'
+    
+    --------------------
+    
+    cancel the statement to stop the process
+    
+    
+    ------------------------
+    
+    Run them as in the back ground.
+    
+    -----------------------
+    
+    
+    Analyze the SQL instead of -- Execute 
+    
+   ----------------------
+   
+   Overal Static Check on all procedures,
+   
+   Right click on procedure -- > Analyze the SQL
