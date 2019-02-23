@@ -1,0 +1,73 @@
+-- In SDI, 2 objects,
+  
+   -- Replication tasks
+   -- FlowGraphs
+   
+  --- Remote Source connection is required to create virtual table,
+    -- Real time replication is possible
+    
+    --------------------
+    
+    FlowGraph -- creates a task in hana,
+    
+    
+    -- Batch --  Stored procedure and task is created -- no restricions
+    -- Real time -- Stored procedure and 2 tasks -- initial load + real time for changes
+    -- Transactional -- no task for initial or batch upload, just one task..
+    -- Procedure -- no task is created, just the stored procedure, many restrictions.
+  -------------------------------------------
+  
+  
+  -- Projection 
+  
+  Data Source -- > Projection  -- > Data target
+     apply filter in Projection, also adjust mapping in the node.
+     
+  --- Aggregation
+  
+    Data Source -- > Projection -- > Aggregation -- > Data Target
+    
+    --  Apply Aggregation on KPI
+   --------------------
+   
+   -- Join 
+   
+    -- Customer Master example
+    
+   -- look up
+   
+    --- Product master look up for PO
+   
+   --- Union
+   
+     US and UK to data sets, combine
+     
+   
+   -------
+   --  Case 
+      Split the data flow in 2 ways, with 2 different possible expressions
+      
+    ------------------------
+    
+    Row Generation
+    
+    Table Comparison
+    
+    History Preserving
+    
+    
+    Date Generation
+    
+    
+    Procedure
+    
+    Predictive Analysis
+    
+    
+    Data Cleansing and Match
+   
+   
+   
+     
+    
+ 
