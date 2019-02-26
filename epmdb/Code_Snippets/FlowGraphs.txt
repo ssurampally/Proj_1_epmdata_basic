@@ -50,24 +50,31 @@
     ------------------------
     
     Row Generation
+    ------
     
     Table Comparison
     
     History Preserving
     
-    
-    Date Generation
+----------------------------
     
     
     Procedure
     
     Predictive Analysis
     
-    
     Data Cleansing and Match
    
-   
+   --------------------------
    
      
+     ----
+     
+     START TASK <Task_name>
+     
+    Include it in a procedure
+    ---------
     
- 
+  -- schedule the procedure with XSA job scheduler
+  
+  

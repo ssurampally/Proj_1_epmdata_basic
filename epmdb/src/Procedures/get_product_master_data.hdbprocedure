@@ -1,0 +1,16 @@
+PROCEDURE "get_product_master_data" ( 
+   OUT ex_product_master TABLE(
+            PRODUCTID NVARCHAR(10), 
+	    	"CATEGORY" NVARCHAR(30))  )
+   LANGUAGE SQLSCRIPT
+   SQL SECURITY INVOKER
+   --DEFAULT SCHEMA <default_schema_name>
+   READS SQL DATA AS
+BEGIN
+   /*************************************
+       Write your procedure logic 
+   *************************************/
+ex_product_master = 
+        select PRODUCTID, CATEGORY from "Products" ;  
+
+ END

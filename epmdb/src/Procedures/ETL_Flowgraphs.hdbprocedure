@@ -1,0 +1,13 @@
+PROCEDURE "ETL_Flowgraphs"( )
+   LANGUAGE SQLSCRIPT
+   SQL SECURITY INVOKER
+   --DEFAULT SCHEMA <default_schema_name>
+   AS
+BEGIN
+   /*************************************
+       Write your procedure logic 
+   *************************************/
+   START TASK "Lookup" ;
+   START TASK "Aggregation" ;
+   
+END
