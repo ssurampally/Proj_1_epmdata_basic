@@ -1,0 +1,35 @@
+-- html5 module as Web Module,
+
+-- Create UAA service, which will be used as single point of entry access to all the modules
+   -- with that all the access will be routed though Web Module URL only.
+   
+   -- UAA service creation,
+   
+   Command line tools, Run the below command.,  or you can create it from XS Advanced Cockpit as well., (XSA_ADMIN) 
+   </-->
+   
+  xs create-service xsuaa space uaa_hana
+   
+   </-->
+   ------------------------------------------------
+   tutorial on this,
+   
+   https://developers.sap.com/tutorials/xsa-html5-module.html
+   
+   -------------------
+   
+  Authentication: xs-app.json file contains the authenticaion mehtod as 'none', you can change that to 'route'
+    so that it gets to xs-security template and gets the authentication done.
+    
+    -- as we have already given 'path' parameter set up on the resources, to ./xs-security.json
+   
+   ----------------------------
+   
+   --- Routing  Web module to nodejs xsjs module
+     -- add the required -- xsjs_api
+        
+        -- Navigate to XSJS module 
+     
+    
+   
+   

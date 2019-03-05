@@ -1,0 +1,35 @@
+-- XSODATA is very simple and also powerful to work with UI,
+
+ -- create, update and delete operations, easily done.
+ 
+ -- In older versions, Odata V2 has been used, which has to be both xml and Json support,
+   -- in Odata V4, no need to have xml support, just Json format should be sufficient.
+   
+   
+   ------------
+ -- Creating a simple service
+ 
+   service 
+{
+  "BusinessPartner" as "Customer";
+}
+
+------------------
+to display the metadata
+/xsodata/BusinessPartner.xsodata/BusinessPartner$metadata
+
+
+-- to display the data in the entity
+/xsodata/BusinessPartner.xsodata/Customer?$format=json
+
+-- to display only top 3 records in the entity
+xsodata/BusinessPartner.xsodata/Customer?$format=json&$top=3
+
+-- to display top 3 and skip 5 records
+
+&$top=3&$skip=5
+
+-------------------------------
+
+-- A complex model with an association, Purchase order
+

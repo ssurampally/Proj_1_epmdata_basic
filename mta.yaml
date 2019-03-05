@@ -31,6 +31,28 @@ modules:
         properties:
           key: crossContainer_ext_proj
           service: '~{the-service-name}'
+  - name: xsjs
+    type: nodejs
+    path: xsjs
+    provides:
+      - name: xsjs_api
+        properties:
+          url: '${default-url}'
+    requires:
+      - name: hdi_epmdb
+      - name: uaa_hana1
+      - name: epmdb
+  - name: Web
+    type: html5
+    path: Web
+    requires:
+      - name: uaa_hana1
+      - name: xsjs_api
+        group: destinations
+        properties:
+          name: xsjs_api
+          url: '~{url}'
+          forwardAuthToken: true
 resources:
   - name: hdi_epmdb
     properties:
@@ -52,3 +74,7 @@ resources:
     properties:
       the-service-name: '${service-name}'
     type: org.cloudfoundry.existing-service
+  - name: uaa_hana1
+    type: com.sap.xs.uaa-space
+    parameters:
+      path: ./xs-security.json

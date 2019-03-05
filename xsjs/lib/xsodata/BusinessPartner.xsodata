@@ -1,0 +1,4 @@
+service 
+{
+  "BusinessPartner" as "Customer";
+}
