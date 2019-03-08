@@ -10,5 +10,15 @@
 		"source": "(.*)(.xsodata)",
 		"destination": "xsjs_api",
 		"authenticationType": "xsuaa"
-	}]
+	},
+	
+	{
+	    "source": "/node(.*)",
+		"destination": "nodejs_api",
+		"csrfProtection": false,
+		"authenticationType": "xsuaa"
+		
+	}
+	
+	]
 }

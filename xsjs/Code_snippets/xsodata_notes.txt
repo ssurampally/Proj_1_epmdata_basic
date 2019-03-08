@@ -15,12 +15,12 @@
 }
 
 ------------------
-to display the metadata
-/xsodata/BusinessPartner.xsodata/BusinessPartner$metadata
-
-
 -- to display the data in the entity
 /xsodata/BusinessPartner.xsodata/Customer?$format=json
+
+/xsodata/BusinessPartner.xsodata/$metadata
+
+---------------
 
 -- to display only top 3 records in the entity
 xsodata/BusinessPartner.xsodata/Customer?$format=json&$top=3
@@ -32,4 +32,16 @@ xsodata/BusinessPartner.xsodata/Customer?$format=json&$top=3
 -------------------------------
 
 -- A complex model with an association, Purchase order
+/xsodata/PurchaseOrder.xsodata/?$format=json
+
+/xsodata/PurchaseOrder.xsodata/$metadata
+
+--- Let us take a look at the PO Header object,
+/xsodata/PurchaseOrder.xsodata/POHeader/?$format=json
+
+--- we can see that POItem is associated and deferred link
+    only that particular header is loaded.,
+    
+  ----------------------------------
+  
 

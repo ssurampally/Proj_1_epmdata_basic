@@ -1,0 +1,37 @@
+---
+
+Setting up a new nodejs module, keep server.js as the main file,
+
+--- Configure the mta.yaml file accordingly, as done in xsjs node module
+
+--------------------
+
+   Prepare the routes for nodejs modules also, just like xsjs module
+   
+   for that, update the new route with below code,
+   
+   {
+	    "source": "/node(.*)",
+		"destination": "nodejs_api",
+		"csrfProtection": false,
+		"authenticationType": "xsuaa"
+		
+	}
+	
+	----------------------
+	
+	--- Get the bootstrap of the file inside server.js
+	
+	----------------------------
+	
+	get all the required modules into package.json, like Express, xsenv, passport all of them.
+	
+	--------------------
+	
+	
+	
+	
+   
+   
+   
+   

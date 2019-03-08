@@ -41,7 +41,6 @@ modules:
     requires:
       - name: hdi_epmdb
       - name: uaa_hana1
-      - name: epmdb
   - name: Web
     type: html5
     path: Web
@@ -53,6 +52,22 @@ modules:
           name: xsjs_api
           url: '~{url}'
           forwardAuthToken: true
+      - name: nodejs_api
+        group: destinations
+        properties:
+          name: nodejs_api
+          url: '~{url}'
+          forwardAuthToken: true
+  - name: nodejs
+    type: nodejs
+    path: nodejs
+    provides:
+      - name: nodejs_api
+        properties:
+          url: '${default-url}'
+    requires:
+      - name: hdi_epmdb
+      - name: uaa_hana1
 resources:
   - name: hdi_epmdb
     properties:
