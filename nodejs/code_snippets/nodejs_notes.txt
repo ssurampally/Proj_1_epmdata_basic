@@ -22,14 +22,50 @@ Setting up a new nodejs module, keep server.js as the main file,
 	
 	--- Get the bootstrap of the file inside server.js
 	
+	  set up routes, 
+	  
+	  create route folder, -- > define the .js files in the router.
+	  
+	  http link extension for 
+	  /node/hi
 	----------------------------
 	
 	get all the required modules into package.json, like Express, xsenv, passport all of them.
 	
+	let us get @sap/hana-cilent and @sap/hdbext
 	--------------------
 	
+	also modify .eslintrc file, to get the some of the advanced features enabled.
+	{
+		"parserOptions": {
+        "sourceType": "module",
+        "ecmaVersion": 2017
+	},
 	
+	-----------------------
+  below http link, should bring us the database details,
+  
+   /node/database
+
+
+--------------------
 	
+   "@sap/hdbext": "4.7.0",    for HANA connection 
+	
+	can also be used to connect to database, it is more feasible and easy to do, 
+	  as it can be embed into Express module
+	  
+---------------------------------------------------------
+
+Part 2:  Getting an External modules,
+   upper-case 
+   date-fns
+
+"date-fns": "^1.30.1"	
+update the server.js with require module
+
+--------------------------------------------------
+
 	
    
    

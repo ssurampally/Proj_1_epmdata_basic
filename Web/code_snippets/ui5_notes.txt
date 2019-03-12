@@ -1,0 +1,54 @@
+-- create the a local service for ui5, instead of using public website
+
+  In the Admin Cockpit,
+  
+   -- create the service,
+   
+   -------------------
+   
+   configure the mta.yaml with ui5 resource in Web module
+   
+   -------------
+   
+   then configure the route handler for xs-app.json of Web module,
+   
+   {
+		"source": "/(.*)",
+		"localDir": "resources",
+		"authenticationType": "xsuaa",
+		"replace": {
+			"pathSuffixes": [
+				"index.html",
+				"odataTest.html"
+			],
+			"services": {
+				"sapui5_sb": {
+					"tag": "ui5"
+				}
+			}
+		}
+	}
+	
+	---------------
+	
+	just replace the ui5 script in   index.html with the below code.
+	
+	<!-- <script id="sap-ui-bootstrap" src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js" -->
+	<script id="sap-ui-bootstrap" src="{{{sapui5_sb.url}}}/resources/sap-ui-core.js"
+    data-sap-ui-libs="sap.m"
+	data-sap-ui-theme="sap_belize_plus">
+		</script>
+		
+----
+
+-- Tutorial to create a UI5 model with buttons and navigations.
+
+https://developers.sap.com/canada/group.hana-xsa-sapui5.html
+
+ run the Web module, -- you can see the changed source, 
+    -- right click on the browser and select view source
+    
+   ----------------------
+   
+   
+   

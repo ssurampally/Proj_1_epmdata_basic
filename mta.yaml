@@ -58,6 +58,7 @@ modules:
           name: nodejs_api
           url: '~{url}'
           forwardAuthToken: true
+      - name: ui5
   - name: nodejs
     type: nodejs
     path: nodejs
@@ -93,3 +94,8 @@ resources:
     type: com.sap.xs.uaa-space
     parameters:
       path: ./xs-security.json
+  - name: ui5
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: sapui5_sb
+      service-plan: sapui5-1.52
