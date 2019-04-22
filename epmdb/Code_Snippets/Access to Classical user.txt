@@ -1,3 +1,5 @@
+In the DBA explorer of HDA container, open SQL console
+
 set schema "MYAPP_HDI_DB_1#DI";   -- this is your HDI schema name
 
 create local temporary column table "#ROLES" like "_SYS_DI"."TT_SCHEMA_ROLES";
@@ -13,3 +15,25 @@ call "MYAPP_HDI_DB_1#DI"."GRANT_CONTAINER_SCHEMA_ROLES"("#ROLES", "_SYS_DI"."T_N
 --call "MYAPP_HDI_DB_1#DI"."REVOKE_CONTAINER_SCHEMA_ROLES"("#ROLES", "_SYS_DI"."T_NO_PARAMETERS", ?, ?, ?);
 
 drop table "#ROLES";
+
+
+-----------------
+
+-- Giving access to entire schema, instead of making it in a role,
+
+set schema "MYAPP_HDI_DB_1#DI";
+
+create local temporary column table "#PRIVILEGES" like "_SYS_DI"."TT_SCHEMA_PRIVILEGES"; 
+
+insert into "#PRIVILEGES" ("PRIVILEGE_NAME", "PRINCIPAL_SCHEMA_NAME", "PRINCIPAL_NAME") values ('SELECT', '', 'MYUSER');
+insert into "#PRIVILEGES" ("PRIVILEGE_NAME", "PRINCIPAL_SCHEMA_NAME", "PRINCIPAL_NAME") values ('INSERT', '', 'MYUSER');
+insert into "#PRIVILEGES" ("PRIVILEGE_NAME", "PRINCIPAL_SCHEMA_NAME", "PRINCIPAL_NAME") values ('UPDATE', '', 'MYUSER');
+insert into "#PRIVILEGES" ("PRIVILEGE_NAME", "PRINCIPAL_SCHEMA_NAME", "PRINCIPAL_NAME") values ('DELETE', '', 'MYUSER');
+
+-- Providing entire schema privileges
+call "MYAPP_HDI_DB_1#DI"."GRANT_CONTAINER_SCHEMA_PRIVILEGES"("#PRIVILEGES", "_SYS_DI"."T_NO_PARAMETERS", ?, ?, ?);
+
+
+--call "MYAPP_HDI_DB_1#DI"."REVOKE_CONTAINER_SCHEMA_PRIVILEGES"("#PRIVILEGES", "_SYS_DI"."T_NO_PARAMETERS", ?, ?, ?);
+
+drop table "#PRIVILEGES";
