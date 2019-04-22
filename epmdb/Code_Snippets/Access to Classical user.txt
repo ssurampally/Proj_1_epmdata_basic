@@ -1,0 +1,15 @@
+set schema "MYAPP_HDI_DB_1#DI";   -- this is your HDI schema name
+
+create local temporary column table "#ROLES" like "_SYS_DI"."TT_SCHEMA_ROLES";
+
+-- here MYUSER is your classic database user name.
+
+insert into "#ROLES" ("ROLE_NAME", "PRINCIPAL_SCHEMA_NAME", "PRINCIPAL_NAME") values ('myapp.db::roles.myrole', '', 'MYUSER');
+
+-- to grant the role
+call "MYAPP_HDI_DB_1#DI"."GRANT_CONTAINER_SCHEMA_ROLES"("#ROLES", "_SYS_DI"."T_NO_PARAMETERS", ?, ?, ?);
+ 
+ -- to revoke the role
+--call "MYAPP_HDI_DB_1#DI"."REVOKE_CONTAINER_SCHEMA_ROLES"("#ROLES", "_SYS_DI"."T_NO_PARAMETERS", ?, ?, ?);
+
+drop table "#ROLES";
