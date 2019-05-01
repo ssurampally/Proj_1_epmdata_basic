@@ -1,0 +1,33 @@
+
+-- Step 1
+
+  Access the migration assistant client install -- CMD prompt
+
+  cd C:\Sreekanth\Client_Tools_Software\XS_MIGRATION_00_15-70002351\xs-migration
+
+-- Step 2
+
+Set the Environtment variables,
+
+ set HANA_HOST=hxehost
+ set HANA_SQL_PORT=39015
+ set HANA_USER=SSURAMPALLY
+ set HANA_PASSWD=xxxx 
+
+ -- Step 3
+
+Run the migration command
+
+xs-migration --target-dir C:\Sreekanth\<new folder>  DU_XSC
+
+
+---------------
+
+-- Step 4
+
+Check the migration report, if no errors
+
+-- Step 5, Import the migrated files to XSA Web IDE and build it.
+
+
+
