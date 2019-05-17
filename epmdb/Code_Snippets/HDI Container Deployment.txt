@@ -1,0 +1,14 @@
+Container specific schemas in Dev 
+
+Sefan from SAP explained the scenario in detailed.
+
+https://blogs.sap.com/2019/05/17/sap-web-ide-workspace-and-hdi-container-isolation-or-how-to-work-on-one-schema-with-multiple-developers/comment-page-1/#comment-460276
+
+I also written the blog on this topic,
+
+https://blogs.sap.com/2018/12/12/hana-life-cycle-management-for-xs-advanced-applications/
+
+
+---------------------------
+
+
