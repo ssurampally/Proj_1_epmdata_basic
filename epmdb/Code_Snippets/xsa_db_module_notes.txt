@@ -6,6 +6,12 @@
 
    --- Log on to Command Line tools,
    --- List out, API End Point,  services and Applications in SAP space.
+   
+    xs api <api-name> --skip-ssl-validation
+    
+    then use xs login command after.
+    
+    ---------------------------------------
 
     -- Service is resource required for our application, the service could be a database, User authentication, connection to datbase etcc
     
