@@ -93,7 +93,7 @@ resources:
   - name: uaa_hana1
     type: com.sap.xs.uaa-space
     parameters:
-      path: ./xs-security.json
+      path: xs-security.json
   - name: ui5
     type: org.cloudfoundry.managed-service
     parameters:
