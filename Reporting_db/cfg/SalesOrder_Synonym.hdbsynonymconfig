@@ -1,0 +1,7 @@
+{
+  "SOHeader": {
+    "target": {
+      "object": "SO.Header",
+      "grantor": <source_service_name>
+    }
+  }
