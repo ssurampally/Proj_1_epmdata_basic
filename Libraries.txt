@@ -1,0 +1,4 @@
+Library is introduced in 2.0 SP 03.
+
+It brings class and object model programming in Database.
+
