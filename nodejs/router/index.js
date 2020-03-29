@@ -4,6 +4,7 @@
 
 module.exports = (app, server) => {
 	app.use("/node", require("./routes/hello")());
-	app.use("/node/database", require("./routes/database")());
-	app.use("/node/npm", require("./routes/npm")());
+	app.use("/node", require("./routes/database")());
+	app.use("/node", require("./routes/npm")());
+	app.use("/node", require("./routes/dbtable")());
 };
