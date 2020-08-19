@@ -1,0 +1,3 @@
+xs log <application> last --200
+
+it gets only last few lines of log of that application.
