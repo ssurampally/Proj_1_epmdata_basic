@@ -1,3 +1,13 @@
 xs log <application> last --200
 
 it gets only last few lines of log of that application.
+
+
+-- if we wanted to delete the service
+
+xs delete-service <service-name>
+
+-- then we can delete app as well
+xs delete-app <app-name>
+
+
