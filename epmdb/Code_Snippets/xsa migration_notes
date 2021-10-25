@@ -13,6 +13,11 @@ Set the Environtment variables,
  set HANA_SQL_PORT=39015
  set HANA_USER=SSURAMPALLY
  set HANA_PASSWD=xxxx 
+ 
+ 
+ Host Info for HANA as a service is different, you will have to open a tunnel and get IP address. that will be passed as host.
+ 
+ -- note: Environment variables values must be given just after EQUAL TO Symbol.
 
  -- Step 3
 
