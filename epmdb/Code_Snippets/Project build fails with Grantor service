@@ -1,0 +1,16 @@
+-- This JSON configuration in Grantor service is only for build.
+
+{
+    "password": "Dataadmin2021",
+    "tags": "[ \"hana\" ]",
+    "user": "DBADMIN"
+}
+
+------
+-- when we are ready to deploy, below json config needs to be done.
+
+ {
+    "password": "Dataadmin2021",
+    "tags": "hana",
+    "user": "DBADMIN"
+}
