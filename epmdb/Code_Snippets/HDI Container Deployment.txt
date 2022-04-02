@@ -11,4 +11,15 @@ https://blogs.sap.com/2018/12/12/hana-life-cycle-management-for-xs-advanced-appl
 
 ---------------------------
 
+xs mtas -- to display all the MTA in the system
+
+ xs deploy c:\location\filename .mtar
+ xs undeploy <mta>
+ 
+ -- this undeploy command only removes the latest MTA version that is installed, but can't go beyond that. 
+ 
+ -- in case if you wanted to go to a very old version, then you may take the MTAR and deploy it again. 
+ 
+ --------------------------
+
 
