@@ -1,0 +1,18 @@
+Option 1
+
+// in the package.json add the below text
+
+--auto-undeploy
+
+
+----------------------
+
+Option 2:
+
+add undeploy.json file in the DB folder
+
+syntax:
+
+[
+  "src/<file-name>"
+]
