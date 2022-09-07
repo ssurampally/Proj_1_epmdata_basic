@@ -7,3 +7,5 @@
     }
   }
 }
+
+--- Schema and database properties are not required to provide in this file.
