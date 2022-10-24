@@ -9,10 +9,14 @@ Option 1
 
 Option 2:
 
-add undeploy.json file in the DB folder
+//add undeploy.json file in the DB folder..
+// file-name will be just the name of the object, no need to give the path or folder structure.
 
-syntax:
+//syntax:
 
 [
   "src/<file-name>"
 ]
+
+//Example: src/cv-name
+
