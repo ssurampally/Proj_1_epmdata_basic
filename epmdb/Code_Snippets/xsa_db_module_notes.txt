@@ -7,7 +7,7 @@
    --- Log on to Command Line tools,
    --- List out, API End Point,  services and Applications in SAP space.
    
-    xs api <api-name> --skip-ssl-validation
+    xs login -a <api-name> --skip-ssl-validation
     
     then use xs login command after.
     
